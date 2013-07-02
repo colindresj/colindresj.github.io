@@ -19,10 +19,12 @@
           <div class="site">
             <div class="header">
               <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-              <a class="extra" href="/">home</a>
+              {% unless page.title == 'JC' %} 
+                <a class="extra" href="/">Return home</a>
+              {% endunless %}
             </div>
 
-                {{ content }}
+            	{{ content }}
 
             <div class="footer">
               <div class="contact">
@@ -35,9 +37,25 @@
                   <a href="http://twitter.com/corporadobob/">@corporadobob</a>
                 </p>
               </div>
+              
+              {% unless page.title == 'JC' %} 
+              	<div class="contact">
+              		<p>
+                		<a class="scrollTop" href="#">Back to Top</a>
+                	</p>
+                </div>
+              {% endunless %}
             </div>
           </div>
         </div> <!-- /container -->
 
     </body>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script>
+			$('.scrollTop').click(function(){
+				$("html, body").animate({ scrollTop: 0 }, 800, 'easeInOutCubic');
+				return false;
+			});
+    </script>
 </html>
