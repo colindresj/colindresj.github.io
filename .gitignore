@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-_site
-=======
 _site/
->>>>>>> e396147ca2cfd77beb3b76bc9ce852630fd7f9fc
+.DS_Store
+*.swp
