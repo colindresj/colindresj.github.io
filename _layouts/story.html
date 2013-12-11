@@ -2,10 +2,13 @@
 layout: default
 ---
 <h2>{{ page.title }}</h2>
-<p class="meta">Last Edited: {{ page.date | date_to_long_string }}</p>
-
-<div class="post">
+<p>Last Edited: {{ page.date | date_to_long_string }}</p>
+<section class="content">
 {{ content }}
-</div>
-
-<p class="meta">Words: {{ page.content | number_of_words }}</p>
+<footer>
+  <p>
+    <p><span class="pink-raw-highlight">Words: {{ page.content | number_of_words }}</span></p>
+    <a class="scrollTop" href="#">Back to Top</a>
+  </p>
+</footer>
+</section>

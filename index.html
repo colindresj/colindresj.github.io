@@ -2,14 +2,34 @@
 layout: default
 title: JC
 ---
-
-<div id="home">
-	<h1>About</h1>
-	<p>I build websites. I write stories.</p>
-  <h1>Stories</h1>
-  <ul class="posts">
+<div class="clock"></div>
+<section class="writing">
+  <h2><span class="pink-raw-highlight">Design</span></h2>
+  <ul>
     {% for post in site.categories.stories %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+      <li>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </li>
     {% endfor %}
   </ul>
-</div>
+</section>
+<section class="design-work">
+  <h2><span class="pink-raw-highlight">Projects</span></h2>
+  <ul class="inline">
+    {% for post in site.categories.stories %}
+      <li>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+<section class="projects">
+  <h2><span class="pink-raw-highlight">Writing</span></h2>
+  <ul class="inline">
+    {% for post in site.categories.stories %}
+      <li>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>

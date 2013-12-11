@@ -11,41 +11,21 @@
   </head>
   <body>
     <div class="container">
-      <div class="site">
-        <div class="header">
-          <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-          {% unless page.title == 'JC' %}
-          <a class="extra" href="/">Return home</a>
-          {% endunless %}
-        </div>
-
-        {{ content }}
-
-        <div class="footer">
-          <div class="contact">
-            <p>
-              <a href="&#109;&#97;&#105;&#108;&#116;&#111;:j&#111;&#114;&#103;&#101;&#46;&#101;.c&#111;&#108;&#105;&#110;&#100;&#114;&#101;&#115;@&#103;&#109;&#97;&#105;&#108;&#46;c&#111;&#109;">&#106;&#111;r&#103;&#101;&#46;&#101;&#46;c&#111;&#108;i&#110;d&#114;&#101;&#115;@&#103;&#109;ai&#108;&#46;&#99;&#111;m</a>
-            </p>
-          </div>
-          <div class="contact">
-            <p>
-              <a href="http://twitter.com/corporadobob/">@corporadobob</a>
-            </p>
-          </div>
-
-          {% unless page.title == 'JC' %}
-          <div class="contact">
-            <p>
-              <a class="scrollTop" href="#">Back to Top</a>
-            </p>
-          </div>
-          {% endunless %}
-        </div>
-      </div>
-    </div> <!-- /container -->
+      <aside>
+        <h2 class="name"><span class="red-raw-highlight"><a href="/">{{ site.author.name }}</a></span></h2>
+        <ul>
+          <li><a href="mailto:{{ site.author.email }}">Email</a></li>
+          <li><a href="http://github.com/{{ site.author.github }}">Github</a></li>
+          <li><a href="http://twitter.com/{{ site.author.twitter }}">Twitter</a></li>
+        </ul>
+      </aside>
+      <section class="content">
+      {{ content }}
+      </section>
+    </div>
     {% unless page.title == 'JC' %}
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
     <script src="/js/main.js"></script>
     {% endunless %}
   </body>
