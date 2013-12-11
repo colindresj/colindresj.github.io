@@ -1,14 +1,9 @@
 ---
 layout: default
+section: writing
 ---
 <h2>{{ page.title }}</h2>
 <p>Last Edited: {{ page.date | date_to_long_string }}</p>
-<section class="content">
-{{ content }}
-<footer>
-  <p>
-    <p><span class="pink-raw-highlight">Words: {{ page.content | number_of_words }}</span></p>
-    <a class="scrollTop" href="#">Back to Top</a>
-  </p>
-</footer>
-</section>
+<article>
+  {{ content }}
+</article>

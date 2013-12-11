@@ -8,6 +8,9 @@ aside {
   padding-top: 3em;
   @include span-columns(3);
 }
+.sidebar {
+  position: fixed;
+}
 .name a {
   text-decoration: none;
   &:hover {

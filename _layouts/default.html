@@ -5,28 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>{{ page.title }}</title>
     <meta name="viewport" content="width=device-width">
-
     <link rel="stylesheet" href="/css/main.css">
-
   </head>
   <body>
     <div class="container">
       <aside>
-        <h2 class="name"><span class="red-raw-highlight"><a href="/">{{ site.author.name }}</a></span></h2>
-        <ul>
-          <li><a href="mailto:{{ site.author.email }}">Email</a></li>
-          <li><a href="http://github.com/{{ site.author.github }}">Github</a></li>
-          <li><a href="http://twitter.com/{{ site.author.twitter }}">Twitter</a></li>
-        </ul>
+        <div class="sidebar">
+          <h2 class="name">
+            <span class="red-raw-highlight"><a href="/">{{ site.author.name }}</a></span>
+          </h2>
+          <ul>
+            <li><a href="mailto:{{ site.author.email }}">Email</a></li>
+            <li><a href="http://github.com/{{ site.author.github }}">Github</a></li>
+            <li><a href="http://twitter.com/{{ site.author.twitter }}">Twitter</a></li>
+          </ul>
+          {% unless page.section == "home" %}
+          <hr>
+          <ul>
+            {% if page.section == "writing" %}
+            <li class="min-read">How Long?</li>
+            <li>Words: {{ page.content | number_of_words }}</li>
+            {% endif %}
+            <li><a class="scrollTop" href="#">Back to Top</a></li>
+          </ul>
+          {% endunless %}
+        </div>
       </aside>
       <section class="content">
       {{ content }}
       </section>
     </div>
-    {% unless page.title == 'JC' %}
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script src="/js/minRead.js"></script
     <script src="/js/main.js"></script>
-    {% endunless %}
   </body>
 </html>
