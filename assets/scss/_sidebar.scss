@@ -7,6 +7,16 @@
 aside {
   padding-top: 3em;
   @include span-columns(3);
+  @include media(max-width 720px) {
+    @include span-columns(12);
+    padding-top: 45px;
+    .sidebar {
+      position: relative;
+    }
+    .scrollTop {
+      display: none;
+    }
+  }
 }
 .sidebar {
   position: fixed;

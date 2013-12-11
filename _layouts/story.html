@@ -3,7 +3,9 @@ layout: default
 section: writing
 ---
 <h2>{{ page.title }}</h2>
-<p>Last Edited: {{ page.date | date_to_long_string }}</p>
+<p>
+  <span class="pink-raw-highlight">Last Edited: {{ page.date | date_to_long_string }}</span>
+</p>
 <article>
   {{ content }}
 </article>

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>{{ page.title }}</title>
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
   </head>
   <body>
     <div class="container">
@@ -23,8 +23,9 @@
           <hr>
           <ul>
             {% if page.section == "writing" %}
-            <li class="min-read">How Long?</li>
-            <li>Words: {{ page.content | number_of_words }}</li>
+            <li>
+              <span class="pink-raw-highlight">Words: {{ page.content | number_of_words }}</span>
+            </li>
             {% endif %}
             <li><a class="scrollTop" href="#">Back to Top</a></li>
           </ul>
@@ -37,7 +38,6 @@
     </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-    <script src="/js/minRead.js"></script
-    <script src="/js/main.js"></script>
+    <script src="/assets/js/main.js"></script>
   </body>
 </html>

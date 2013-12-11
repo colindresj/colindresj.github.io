@@ -8,6 +8,10 @@ body {
    font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
    font-weight: 300;
    font-size: 14px;
+   @include media(max-width 480px) {
+    text-align: center;
+    font-size: 1.25em;
+  }
 }
 a {
   color: black;
@@ -29,9 +33,14 @@ hr {
 }
 .container {
   @include outer-container;
+  @include media(min-width 481px max-width 960px) {
+    padding: 0 2em;
+  }
 }
 .content {
-  @include media(480px) {
-    @include span-columns(9);
+  @include span-columns(9);
+  @include media(max-width 720px) {
+    padding: 0 2em;
+    @include span-columns(12);
   }
 }
