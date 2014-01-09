@@ -3,31 +3,52 @@ layout: default
 title: JC
 section: home
 ---
-<div class="clock"></div>
-<section class="design-work">
-  <h2><span class="pink-raw-highlight">Design</span></h2>
-  <ul>
-    <li><a href="#">Design Project 1</a></li>
-    <li><a href="#">Design Project 2</a></li>
-    <li><a href="#">Design Project 3</a></li>
-    <li><a href="#">Design Project 4</a></li>
-  </ul>
-</section>
-<section class="projects">
-  <h2><span class="pink-raw-highlight">Projects</span></h2>
-  <ul>
-    <li><a href="http://write-with-ernest.herokuapp.com">Ernest</a> is on <a href="https://github.com/corporadobob/ernest">github</a></li>
-    <li>Chimpaxify is on <a href="https://github.com/corporadobob/chimpaxify">github</a></li>
-    <li><a href="#">Granulr</a> is on <a href="https://github.com/corporadobob/granulr">github</a></li>
-  </ul>
-</section>
-<section class="writing">
-  <h2><span class="pink-raw-highlight">Writing</span></h2>
-  <ul>
-    {% for post in site.categories.stories %}
-      <li>
-        <a href="{{ post.url }}">{{ post.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
+<section class="title">
+  <div class="name">
+    <h1>Jorge is a developer and designer living and working in New York, NY.</h1>
+  </div>
+  <div class="logo">
+    Logo here
+  </section>
+</header>
+<section class="work">
+  <div class="design">
+    <aside>
+      <h4><span class="pink-raw-highlight">Design</span></h4>
+    </aside>
+    <div class="work-links">
+      <ul>
+        <li><a href="#">Design Project 1</a></li>
+        <li><a href="#">Design Project 2</a></li>
+        <li><a href="#">Design Project 3</a></li>
+        <li><a href="#">Design Project 4</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="projects">
+    <aside>
+      <h4><span class="pink-raw-highlight">Projects</span></h4>
+    </aside>
+    <div class="work-links">
+      <ul>
+        <li><a href="http://write-with-ernest.herokuapp.com">Ernest</a> is on <a href="https://github.com/corporadobob/ernest">github</a></li>
+        <li>Chimpaxify is on <a href="https://github.com/corporadobob/chimpaxify">github</a></li>
+        <li><a href="#">Granulr</a> is on <a href="https://github.com/corporadobob/granulr">github</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="writing">
+    <aside>
+      <h4><span class="pink-raw-highlight">Writing</span></h4>
+    </aside>
+    <div class="work-links">
+      <ul>
+        {% for post in site.categories.stories %}
+        <li>
+          <a href="{{ post.url }}">{{ post.title }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
 </section>

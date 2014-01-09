@@ -3,28 +3,58 @@
 /* Home
 /*
 /*****************************************************************************/
-
-// http://media.giphy.com/media/DJHXtg7qgxcdO/giphy.gif
-// http://media.giphy.com/media/Q81DT8hebdGr6/giphy.gif
-// http://media.giphy.com/media/lSa5iZGaoV8GY/giphy.gif
-.clock {
-  background: url('http://media.giphy.com/media/DJHXtg7qgxcdO/giphy.gif') no-repeat center center;
-  display: block;
-  margin: 45px auto;
-  width: 400px;
-  max-width: 100%;
-  height: 300px;
-  @include background-size(contain);
-}
-.writing, .design-work, .projects {
-  @include span-columns(3 of 9);
-  @include media(min-width 481px max-width 720px) {
-    @include span-columns(4 of 12);
+.title {
+  margin: $title-margins;
+  @include span-columns(12 of 12);
+  @include omega();
+  .name {
+    @include span-columns(7 of 12);
+    @include media(min-width 481px max-width 720px) {
+      @include span-columns(8 of 12)
+    }
   }
-  @include media(max-width 480px) {
-    @include span-columns(12);
-    li {
-      margin-bottom: 1em;
+  .logo {
+    @include span-columns(3 of 12);
+    @include shift(2);
+    @include media(min-width 481px max-width 720px) {
+      @include shift(1);
+    }
+  }
+  .name, .logo {
+    @include media(max-width 480px) {
+      @include span-columns(12 of 12);
+      @include shift(0);
+      @include omega();
+    }
+  }
+}
+.work {
+  @include span-columns(12 of 12);
+  @include omega();
+}
+.writing, .design, .projects {
+  margin: $work-row-margins;
+  @include span-columns(12 of 12);
+  @include omega();
+  aside {
+    padding-top: 0;
+    @include span-columns(3 of 12);
+    h4 {
+      margin: 0;
+      line-height: .85em;
+    }
+  }
+  .work-links {
+    @include span-columns(9 of 12);
+    @include omega();
+    @include media(max-width 480px) {
+      margin-bottom: 2em;
+    }
+  }
+  .work-links, aside {
+    @include media(max-width 480px) {
+      @include span-columns(12 of 12);
+      @include omega();
     }
   }
 }

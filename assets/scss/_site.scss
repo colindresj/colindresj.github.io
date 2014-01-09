@@ -5,29 +5,47 @@
 /*****************************************************************************/
 
 body {
-   font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
-   font-weight: 300;
-   font-size: 14px;
+   font-family: $base-font-family;
+   font-weight: $base-font-weight;
+   font-size: $base-font-size;
    @include media(max-width 480px) {
     text-align: center;
     font-size: 1.25em;
   }
 }
+h1 {
+  font-size: $base-h1-font-size;
+  line-height: $base-line-height;
+}
+h2 {
+  font-size: $base-h2-font-size;
+}
+h3 {
+  font-size: $base-h3-font-size;
+}
+h4 {
+  font-size: $base-h4-font-size;
+}
+p {
+  font-size: $base-p-font-size;
+  line-height: $base-p-line-height;
+}
 a {
   color: black;
   &:hover {
-    color: red;
+    color: $secondary-color;
   }
 }
 ul {
   padding: 0;
+  margin: 0;
   li {
     list-style: none;
     margin: 0 0 .5em 0;
   }
 }
 hr {
-  border: 2px solid red;
+  border: 2px solid $secondary-color;
   margin: 3em auto;
   width: 20%;
 }
@@ -38,9 +56,5 @@ hr {
   }
 }
 .content {
-  @include span-columns(9);
-  @include media(max-width 720px) {
-    padding: 0 2em;
-    @include span-columns(12);
-  }
+  @include span-columns(12);
 }

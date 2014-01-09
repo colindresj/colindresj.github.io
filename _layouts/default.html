@@ -9,29 +9,6 @@
   </head>
   <body>
     <div class="container">
-      <aside>
-        <div class="sidebar">
-          <h2 class="name">
-            <span class="red-raw-highlight"><a href="/">{{ site.author.name }}</a></span>
-          </h2>
-          <ul>
-            <li><a href="mailto:{{ site.author.email }}">Email</a></li>
-            <li><a href="http://github.com/{{ site.author.github }}">Github</a></li>
-            <li><a href="http://twitter.com/{{ site.author.twitter }}">Twitter</a></li>
-          </ul>
-          {% unless page.section == "home" %}
-          <hr>
-          <ul>
-            {% if page.section == "writing" %}
-            <li>
-              <span class="pink-raw-highlight">Words: {{ page.content | number_of_words }}</span>
-            </li>
-            {% endif %}
-            <li><a class="scrollTop" href="#">Back to Top</a></li>
-          </ul>
-          {% endunless %}
-        </div>
-      </aside>
       <section class="content">
       {{ content }}
       </section>
