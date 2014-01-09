@@ -1,4 +1,6 @@
-corporadobob.github.io
-======================
+##Colindres.me
 
-Jekyll source for personal site
+You can visit at [colindres.me](http://colindres.me/) or [corporadobob.github.io](http://corporadobob.github.io/).
+
+###Built With
+Jekyll, SCSS, jQuery, CoffeeScript
