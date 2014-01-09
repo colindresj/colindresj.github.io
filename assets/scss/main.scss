@@ -1,12 +1,25 @@
-@import "bourbon/bourbon";
-@import "neat/neat";
-@import "reset";
-@import "variables";
-@import "responsive-utilities";
-@import "site";
-@import "font";
-@import "home";
-@import "sidebar";
-@import "posts";
-@import "raw-highlights";
-@import "syntax";
+// Vendor imports
+@import "vendor/bourbon/bourbon";
+@import "vendor/neat/neat";
+
+// Utilities
+@import "utilities/reset";
+@import "utilities/variables";
+@import "utilities/responsive-utilities";
+@import "utilities/font";
+
+// Atoms
+@import "atoms/inline-list";
+// @import "atoms/raw-highlights";
+@import "atoms/syntax";
+
+// Elements
+@import "elements/body";
+@import "elements/type";
+@import "elements/lists";
+
+// Modules
+@import "modules/site";
+@import "modules/footer";
+@import "modules/home";
+@import "modules/posts";

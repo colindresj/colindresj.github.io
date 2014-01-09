@@ -1,0 +1,9 @@
+body {
+   font-family: $base-font-family;
+   font-weight: $base-font-weight;
+   font-size: $base-font-size;
+   @include media(max-width 480px) {
+    text-align: center;
+    font-size: 1.25em;
+  }
+}

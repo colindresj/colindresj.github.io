@@ -1,0 +1,25 @@
+h1 {
+  font-size: $base-h1-font-size;
+  line-height: $base-line-height;
+}
+h2 {
+  font-size: $base-h2-font-size;
+}
+h3 {
+  font-size: $base-h3-font-size;
+}
+h4 {
+  font-size: $base-h4-font-size;
+}
+p {
+  font-size: $base-p-font-size;
+  line-height: $base-p-line-height;
+}
+a {
+  color: black;
+}
+hr {
+  border: 2px solid $secondary-color;
+  margin: 3em auto;
+  width: 20%;
+}

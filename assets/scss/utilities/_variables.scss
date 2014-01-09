@@ -13,8 +13,14 @@ $base-p-font-size: 1.25em;
 $base-p-line-height: ($base-line-height * 1.4);
 
 $primary-color: #000;
-$secondary-color: #de9dbb;
+$secondary-color: #ffbfcb;
 $accent-color: #3e54fa;
+
+$footer-text-color: #fff;
+$footer-bg-color: $accent-color;
+$footer-margin: 4em 0 0 0;
+$footer-row-margin-bottom: 2em;
+$footer-padding: 2em 0;
 
 $home-title-margins: 4em 0;
 $story-title-margins: 0 0 4em 0;
