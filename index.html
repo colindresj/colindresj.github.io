@@ -3,52 +3,71 @@ layout: default
 title: JC
 section: home
 ---
-<section class="title">
-  <div class="name">
-    <h1>Jorge is a developer and designer living and working in New York, NY.</h1>
-  </div>
-  <div class="logo">
-    Logo here
+<div class="slide" id="slide1" data-slide="1" data-stellar-background-ratio="0.5">
+  <section class="title">
+    <div class="name">
+      <h1>Jorge is a developer and designer living and working in New York, NY.</h1>
+    </div>
+    <div class="logo">
+      Logo here
+    </section>
+  </header>
+  <section class="work">
+    <div class="design">
+      <aside>
+        <h4><span class="pink-raw-highlight">Design</span></h4>
+      </aside>
+      <div class="work-links">
+        <ul>
+          <li><a href="#">Design Project 1</a></li>
+          <li><a href="#">Design Project 2</a></li>
+          <li><a href="#">Design Project 3</a></li>
+          <li><a href="#">Design Project 4</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="projects">
+      <aside>
+        <h4><span class="pink-raw-highlight">Projects</span></h4>
+      </aside>
+      <div class="work-links">
+        <ul>
+          <li><a href="http://write-with-ernest.herokuapp.com">Ernest</a> is on <a href="https://github.com/corporadobob/ernest">github</a></li>
+          <li>Chimpaxify is on <a href="https://github.com/corporadobob/chimpaxify">github</a></li>
+          <li><a href="#">Granulr</a> is on <a href="https://github.com/corporadobob/granulr">github</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="writing">
+      <aside>
+        <h4><span class="pink-raw-highlight">Writing</span></h4>
+      </aside>
+      <div class="work-links">
+        <ul>
+          {% for post in site.categories.stories %}
+          <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
   </section>
-</header>
-<section class="work">
-  <div class="design">
-    <aside>
-      <h4><span class="pink-raw-highlight">Design</span></h4>
-    </aside>
-    <div class="work-links">
-      <ul>
-        <li><a href="#">Design Project 1</a></li>
-        <li><a href="#">Design Project 2</a></li>
-        <li><a href="#">Design Project 3</a></li>
-        <li><a href="#">Design Project 4</a></li>
-      </ul>
+</div>
+<div class="slide" id="slide2" data-slide="2" data-stellar-background-ratio="0.5">
+  <section class="contact">
+    <div>
+      <h1>If you would like to work with me, please get in touch.</h1>
     </div>
-  </div>
-  <div class="projects">
-    <aside>
-      <h4><span class="pink-raw-highlight">Projects</span></h4>
-    </aside>
-    <div class="work-links">
-      <ul>
-        <li><a href="http://write-with-ernest.herokuapp.com">Ernest</a> is on <a href="https://github.com/corporadobob/ernest">github</a></li>
-        <li>Chimpaxify is on <a href="https://github.com/corporadobob/chimpaxify">github</a></li>
-        <li><a href="#">Granulr</a> is on <a href="https://github.com/corporadobob/granulr">github</a></li>
-      </ul>
+    <div class="contact-links">
+      <aside>
+        <h4><span class="pink-raw-highlight">Contact</span></h4>
+      </aside>
+      <div class="links">
+        <ul>
+          <li><a href="mailto:{{ site.author.email }}">Email</a></li>
+          <li><a href="http://github.com/{{ site.author.github }}">Github</a></li>
+          <li><a href="http://twitter.com/{{ site.author.twitter }}">Twitter</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
-  <div class="writing">
-    <aside>
-      <h4><span class="pink-raw-highlight">Writing</span></h4>
-    </aside>
-    <div class="work-links">
-      <ul>
-        {% for post in site.categories.stories %}
-        <li>
-          <a href="{{ post.url }}">{{ post.title }}</a>
-        </li>
-        {% endfor %}
-      </ul>
-    </div>
-  </div>
-</section>
+  </section>
+</div>

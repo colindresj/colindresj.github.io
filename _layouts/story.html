@@ -2,10 +2,31 @@
 layout: default
 section: writing
 ---
-<h2>{{ page.title }}</h2>
-<p>
-  <span class="pink-raw-highlight">Last Edited: {{ page.date | date_to_long_string }}</span>
-</p>
-<article>
-  {{ content }}
-</article>
+<section class="story">
+  <aside>
+    <ul>
+      <li>
+        <span class="pink-raw-highlight">Last Edited: {{ page.date | date_to_long_string }}</span>
+      </li>
+      <li>
+        <span>Words: {{ page.content | number_of_words }}</span>
+      </li>
+      <li><a href="/">Home</a></li>
+      <li><a class="scrollTop" href="#">Back to Top</a></li>
+    </ul>
+  </aside>
+  <article>
+    <header>
+      <h2>{{ page.title }}</h2>
+      {% if page.section == "writing" %}
+        <p class="details">
+          <span class="pink-raw-highlight">Last Edited: {{ page.date | date_to_long_string }}</span>
+        </p>
+        <p class="details">
+          <span>Words: {{ page.content | number_of_words }}</span>
+        </p>
+      {% endif %}
+    </header>
+    {{ content }}
+  </article>
+</section>

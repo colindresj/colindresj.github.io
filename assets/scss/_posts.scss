@@ -4,6 +4,41 @@
 /*
 /*****************************************************************************/
 
+.story {
+  @include span-columns(12 of 12);
+  @include omega();
+  aside {
+    padding-top: 2.15em;
+    @include span-columns(3 of 12);
+    @include media(max-width 720px) {
+      display: none;
+    }
+    ul {
+      position: fixed;
+    }
+    li:nth-last-of-type(2) {
+      margin-top: 4em;
+    }
+  }
+  article {
+    @include span-columns(9 of 12);
+    @include media(max-width 720px) {
+      @include span-columns(12 of 12);
+    }
+    header {
+      margin: $story-title-margins;
+    }
+    .details {
+      @include visible-m();
+      @include hidden-l();
+      font-size: 1em;
+    }
+  }
+}
+
+
+
+
 .post {
   pre {
     border: 1px solid #ddd;

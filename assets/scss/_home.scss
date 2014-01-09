@@ -4,7 +4,7 @@
 /*
 /*****************************************************************************/
 .title {
-  margin: $title-margins;
+  margin: $home-title-margins;
   @include span-columns(12 of 12);
   @include omega();
   .name {
@@ -55,6 +55,17 @@
     @include media(max-width 480px) {
       @include span-columns(12 of 12);
       @include omega();
+    }
+  }
+}
+.contact {
+  background-color: $secondary-color;
+  @include span-columns(12 of 12);
+  @include omega();
+  div {
+    @include span-columns(7 of 12);
+    @include media(min-width 481px max-width 720px) {
+      @include span-columns(8 of 12)
     }
   }
 }

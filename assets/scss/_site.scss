@@ -54,6 +54,9 @@ hr {
   @include media(min-width 481px max-width 960px) {
     padding: 0 2em;
   }
+  .slide {
+    @include outer-container;
+  }
 }
 .content {
   @include span-columns(12);
