@@ -32,6 +32,9 @@
       @include visible-m();
       @include hidden-l();
       font-size: 1em;
+      @include media(max-width 480px) {
+        text-align: center;
+      }
     }
   }
 }
