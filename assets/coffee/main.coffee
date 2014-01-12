@@ -34,15 +34,29 @@ $ ->
   $knowtifyGallery.on "click", (e) ->
     e.preventDefault()
     $.swipebox [
-      href: "/assets/img/knowtify-desktop.jpg"
+      href: "/assets/img/knowtify/knowtify-desktop.jpg"
     ,
-      href: "/assets/img/knowtify-mobile.jpg"
+      href: "/assets/img/knowtify/knowtify-mobile.jpg"
     ,
-      href: "/assets/img/knowtify-logomarks.jpg"
+      href: "/assets/img/knowtify/knowtify-logomarks.jpg"
     ,
-      href: "/assets/img/knowtify-colors.jpg"
+      href: "/assets/img/knowtify/knowtify-colors.jpg"
     ,
-      href: "/assets/img/knowtify-type.jpg"
+      href: "/assets/img/knowtify/knowtify-type.jpg"
+    ]
+
+  $orchidGallery.on "click", (e) ->
+    e.preventDefault()
+    $.swipebox [
+      href: "/assets/img/orchid/orchid-cover.jpg"
+    ,
+      href: "/assets/img/orchid/orchid-web.jpg"
+    ,
+      href: "/assets/img/orchid/orchid-dashboard.jpg"
+    ,
+      href: "/assets/img/orchid/orchid-ipad.jpg"
+    ,
+      href: "/assets/img/orchid/orchid-ipad2.jpg"
     ]
 
   # -----------------
