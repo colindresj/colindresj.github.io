@@ -59,6 +59,22 @@ $ ->
       href: "/assets/img/orchid/orchid-ipad2.jpg"
     ]
 
+  $tallerMoureGallery.on "click", (e) ->
+    e.preventDefault()
+    $.swipebox [
+      href: "/assets/img/taller-moure/taller-moure-letter.jpg"
+    ,
+      href: "/assets/img/taller-moure/taller-moure-envelope.jpg"
+    ,
+      href: "/assets/img/taller-moure/taller-moure-card.jpg"
+    ,
+      href: "/assets/img/taller-moure/taller-moure-logomarks.jpg"
+    ,
+      href: "/assets/img/taller-moure/taller-moure-colors.jpg"
+    ,
+      href: "/assets/img/taller-moure/taller-moure-type.jpg"
+    ]
+
   # -----------------
   # Mixpanel Events
   # -----------------
