@@ -1,0 +1,19 @@
+{
+  "name": "personal_page",
+  "version": "0.0.2",
+  "homepage": "https://github.com/corporadobob/corporadobob.github.io",
+  "authors": [
+    "JC <jorge.e.colindres@gmail.com>"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "swipebox": "*",
+    "fastclick": "~0.6.11"
+  }
+}

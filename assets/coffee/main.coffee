@@ -5,6 +5,12 @@ $ ->
   $content = $(".content")
   $contactLinks = $(".contact-links .links")
 
+  # Gallery vars
+  $knowtifyGallery = $("#knowtify-gallery")
+  $tallerMoureGallery = $("#taller-moure-gallery")
+  $orchidGallery = $("#orchid-gallery")
+  $appleTvGallery = $("#apple-tv-gallery")
+
   String::titleize = ->
     return ""  unless @?
     String(@).replace /(?:^|\s)\S/g, (c) ->
@@ -12,12 +18,32 @@ $ ->
 
   FastClick.attach document.body
 
-  # Scroll to top
+  # -----------------
+  # Scroll to  Top
+  # -----------------
   $scrollTop.on "click", (e) ->
     e.preventDefault()
     $htmlBody.animate
       scrollTop: 0
     , 800, "easeInOutCubic"
+
+
+  # -----------------
+  # Galleries
+  # -----------------
+  $knowtifyGallery.on "click", (e) ->
+    e.preventDefault()
+    $.swipebox [
+      href: "/assets/img/knowtify-desktop.jpg"
+    ,
+      href: "/assets/img/knowtify-mobile.jpg"
+    ,
+      href: "/assets/img/knowtify-logomarks.jpg"
+    ,
+      href: "/assets/img/knowtify-colors.jpg"
+    ,
+      href: "/assets/img/knowtify-type.jpg"
+    ]
 
   # -----------------
   # Mixpanel Events
