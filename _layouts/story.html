@@ -6,7 +6,7 @@ section: writing
   <aside>
     <ul>
       <li>
-        <span class="pink-raw-highlight">Last Edited: {{ page.date | date_to_long_string }}</span>
+        <span>Last Edited: {{ page.date | date_to_long_string }}</span>
       </li>
       <li>
         <span>Words: {{ page.content | number_of_words }}</span>
@@ -19,12 +19,8 @@ section: writing
     <header>
       <h2>{{ page.title }}</h2>
       {% if page.section == "writing" %}
-        <p class="details">
-          <span class="pink-raw-highlight">Last Edited: {{ page.date | date_to_long_string }}</span>
-        </p>
-        <p class="details">
-          <span>Words: {{ page.content | number_of_words }}</span>
-        </p>
+        <p class="details"> Last Edited: {{ page.date | date_to_long_string }}</p>
+        <p class="details"> Words: {{ page.content | number_of_words }}</p>
       {% endif %}
     </header>
     {{ content }}

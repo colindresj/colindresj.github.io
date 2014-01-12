@@ -15,37 +15,46 @@ section: home
 <section class="work">
   <div class="design">
     <aside>
-      <h4><span class="pink-raw-highlight">Design</span></h4>
+      <h4>Design</h4>
     </aside>
-    <div class="work-links">
+    <div class="work-links" data-work-type="design">
       <ul>
-        <li><a href="#">Knowtify</a></li>
-        <li><a href="#">Taller Moure</a></li>
-        <li><a href="#">Orchid</a></li>
-        <li><a href="#">Apple TV</a></li>
+        <li><a href="#" data-work-link="knowtify">Knowtify</a></li>
+        <li><a href="#" data-work-link="taller moure">Taller Moure</a></li>
+        <li><a href="#" data-work-link="orchid">Orchid</a></li>
+        <li><a href="#" data-work-link="apple tv">Apple TV</a></li>
       </ul>
     </div>
   </div>
   <div class="projects">
     <aside>
-      <h4><span class="pink-raw-highlight">Projects</span></h4>
+      <h4>Projects</h4>
     </aside>
-    <div class="work-links">
+    <div class="work-links" data-work-type="code">
       <ul>
-        <li><a href="http://write-with-ernest.herokuapp.com">Ernest</a> is on <a href="https://github.com/corporadobob/ernest">github</a></li>
-        <li>Chimpaxify is on <a href="https://github.com/corporadobob/chimpaxify">github</a></li>
-        <li><a href="http://granulr.herokuapp.com">Granulr</a> is on <a href="https://github.com/corporadobob/granulr">github</a></li>
+        <li>
+          <a href="http://write-with-ernest.herokuapp.com" data-work-link="ernest:hosted">Ernest</a> is on <a href="https://github.com/corporadobob/ernest" data-work-link="ernest:code">github</a>
+        </li>
+        <li>
+          <a href="http://game-title.herokuapp.com" data-work-link="game title:hosted">Game Title</a> is on <a href="https://github.com/corporadobob/game_title" data-work-link="game title:code">github</a>
+        </li>
+        <li>
+          Chimpaxify is on <a href="https://github.com/corporadobob/chimpaxify" data-work-link="chimpaxify:code">github</a>
+        </li>
+        <li>
+          <a href="http://granulr.herokuapp.com" data-work-link="granulr:hosted">Granulr</a> is on <a href="https://github.com/corporadobob/granulr_app" data-work-link="granulr:code">github</a>
+        </li>
       </ul>
     </div>
   </div>
   <div class="writing">
     <aside>
-      <h4><span class="pink-raw-highlight">Writing</span></h4>
+      <h4>Writing</h4>
     </aside>
-    <div class="work-links">
+    <div class="work-links" data-work-type="writing">
       <ul>
         {% for post in site.categories.stories %}
-        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+        <li><a href="{{ post.url }}" data-work-link="{{ post.title }}">{{ post.title }}</a></li>
         {% endfor %}
       </ul>
     </div>
