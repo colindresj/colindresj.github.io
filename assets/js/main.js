@@ -1,6 +1,6 @@
 (function() {
   $(function() {
-    var $appleTvGallery, $contactLinks, $content, $htmlBody, $knowtifyGallery, $orchidGallery, $scrollTop, $tallerMoureGallery;
+    var $contactLinks, $content, $htmlBody, $knowtifyGallery, $orchidGallery, $scrollTop, $tallerMoureGallery;
     $scrollTop = $(".scrollTop");
     $htmlBody = $("html, body");
     $content = $(".content");
@@ -8,7 +8,6 @@
     $knowtifyGallery = $("#knowtify-gallery");
     $tallerMoureGallery = $("#taller-moure-gallery");
     $orchidGallery = $("#orchid-gallery");
-    $appleTvGallery = $("#apple-tv-gallery");
     String.prototype.titleize = function() {
       if (typeof this === "undefined" || this === null) {
         return "";

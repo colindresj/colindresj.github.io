@@ -9,7 +9,6 @@ $ ->
   $knowtifyGallery = $("#knowtify-gallery")
   $tallerMoureGallery = $("#taller-moure-gallery")
   $orchidGallery = $("#orchid-gallery")
-  $appleTvGallery = $("#apple-tv-gallery")
 
   String::titleize = ->
     return ""  unless @?
