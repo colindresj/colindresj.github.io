@@ -9,6 +9,7 @@ $ ->
   $knowtifyGallery = $("#knowtify-gallery")
   $tallerMoureGallery = $("#taller-moure-gallery")
   $orchidGallery = $("#orchid-gallery")
+  $spaceGallery = $("#space-gallery")
 
   String::titleize = ->
     return ""  unless @?
@@ -72,6 +73,12 @@ $ ->
       href: "/assets/img/taller-moure/taller-moure-colors.jpg"
     ,
       href: "/assets/img/taller-moure/taller-moure-type.jpg"
+    ]
+
+  $spaceGallery.on "click", (e) ->
+    e.preventDefault()
+    $.swipebox [
+      href: "/assets/img/space/luna.jpg"
     ]
 
   # -----------------

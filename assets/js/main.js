@@ -1,6 +1,6 @@
 (function() {
   $(function() {
-    var $contactLinks, $content, $htmlBody, $knowtifyGallery, $orchidGallery, $scrollTop, $tallerMoureGallery;
+    var $contactLinks, $content, $htmlBody, $knowtifyGallery, $orchidGallery, $scrollTop, $spaceGallery, $tallerMoureGallery;
     $scrollTop = $(".scrollTop");
     $htmlBody = $("html, body");
     $content = $(".content");
@@ -8,6 +8,7 @@
     $knowtifyGallery = $("#knowtify-gallery");
     $tallerMoureGallery = $("#taller-moure-gallery");
     $orchidGallery = $("#orchid-gallery");
+    $spaceGallery = $("#space-gallery");
     String.prototype.titleize = function() {
       if (typeof this === "undefined" || this === null) {
         return "";
@@ -70,6 +71,14 @@
           href: "/assets/img/taller-moure/taller-moure-colors.jpg"
         }, {
           href: "/assets/img/taller-moure/taller-moure-type.jpg"
+        }
+      ]);
+    });
+    $spaceGallery.on("click", function(e) {
+      e.preventDefault();
+      return $.swipebox([
+        {
+          href: "/assets/img/space/luna.jpg"
         }
       ]);
     });
