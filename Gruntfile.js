@@ -55,18 +55,16 @@ module.exports = function(grunt) {
       }
     },
     imagemin: {
-      jpg: {
+      static: {
         options: {
           progressive: true
         },
-        files: [
-          {
-            expand: true,
-            src: ['assets/img/**/*.jpg'],
-            dest: '/',
-            ext: '.jpg'
-          }
-        ]
+        files: {
+          'assets/img/compressed/knowtify': 'assets/img/knowtify/*.jpg',
+          'assets/img/compressed/orchid': 'assets/img/orchid/*.jpg',
+          'assets/img/compressed/taller-moure': 'assets/img/taller-moure/*.jpg',
+          'assets/img/compressed/sapce': 'assets/img/sapce/*.jpg'
+        }
       }
     },
     exec: {
