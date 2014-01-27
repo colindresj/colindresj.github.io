@@ -54,6 +54,21 @@ module.exports = function(grunt) {
         }
       }
     },
+    imagemin: {
+      jpg: {
+        options: {
+          progressive: true
+        },
+        files: [
+          {
+            expand: true,
+            src: ['assets/img/**/*.jpg'],
+            dest: '/',
+            ext: '.jpg'
+          }
+        ]
+      }
+    },
     exec: {
       build: {
         cmd: 'jekyll build'
@@ -69,9 +84,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-exec');
 
-  grunt.registerTask('default', [ 'coffee', 'uglify', 'sass', 'copy', 'cssmin', 'exec:build' ]);
+  grunt.registerTask('default', [ 'coffee', 'uglify', 'sass', 'copy', 'cssmin', 'imagemin', 'exec:build' ]);
   grunt.registerTask('serve', ['exec:serve']);
 
 };
