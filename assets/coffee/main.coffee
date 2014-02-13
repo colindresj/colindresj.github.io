@@ -7,9 +7,13 @@ $ ->
 
   # Gallery vars
   $knowtifyGallery = $("#knowtify-gallery")
+  knowtifyPath = "/assets/img/knowtify"
   $tallerMoureGallery = $("#taller-moure-gallery")
+  tallerMourePath = "/assets/img/taller-moure"
   $orchidGallery = $("#orchid-gallery")
+  orchidPath = "/assets/img/orchid"
   $spaceGallery = $("#space-gallery")
+  spacePath = "/assets/img/space"
 
   String::titleize = ->
     return ""  unless @?
@@ -34,51 +38,51 @@ $ ->
   $knowtifyGallery.on "click", (e) ->
     e.preventDefault()
     $.swipebox [
-      href: "/assets/img/knowtify/knowtify-desktop.jpg"
+      href: "#{knowtifyPath}/knowtify-desktop.jpg"
     ,
-      href: "/assets/img/knowtify/knowtify-mobile.jpg"
+      href: "#{knowtifyPath}/knowtify-mobile.jpg"
     ,
-      href: "/assets/img/knowtify/knowtify-logomarks.jpg"
+      href: "#{knowtifyPath}/knowtify-logomarks.jpg"
     ,
-      href: "/assets/img/knowtify/knowtify-colors.jpg"
+      href: "#{knowtifyPath}/knowtify-colors.jpg"
     ,
-      href: "/assets/img/knowtify/knowtify-type.jpg"
+      href: "#{knowtifyPath}/knowtify-type.jpg"
     ]
 
   $orchidGallery.on "click", (e) ->
     e.preventDefault()
     $.swipebox [
-      href: "/assets/img/orchid/orchid-cover.jpg"
+      href: "#{orchidPath}/orchid-cover.jpg"
     ,
-      href: "/assets/img/orchid/orchid-web.jpg"
+      href: "#{orchidPath}/orchid-web.jpg"
     ,
-      href: "/assets/img/orchid/orchid-dashboard.jpg"
+      href: "#{orchidPath}/orchid-dashboard.jpg"
     ,
-      href: "/assets/img/orchid/orchid-ipad.jpg"
+      href: "#{orchidPath}/orchid-ipad.jpg"
     ,
-      href: "/assets/img/orchid/orchid-ipad2.jpg"
+      href: "#{orchidPath}/orchid-ipad2.jpg"
     ]
 
   $tallerMoureGallery.on "click", (e) ->
     e.preventDefault()
     $.swipebox [
-      href: "/assets/img/taller-moure/taller-moure-letter.jpg"
+      href: "#{tallerMourePath}/taller-moure-letter.jpg"
     ,
-      href: "/assets/img/taller-moure/taller-moure-envelope.jpg"
+      href: "#{tallerMourePath}/taller-moure-envelope.jpg"
     ,
-      href: "/assets/img/taller-moure/taller-moure-card.jpg"
+      href: "#{tallerMourePath}/taller-moure-card.jpg"
     ,
-      href: "/assets/img/taller-moure/taller-moure-logomarks.jpg"
+      href: "#{tallerMourePath}/taller-moure-logomarks.jpg"
     ,
-      href: "/assets/img/taller-moure/taller-moure-colors.jpg"
+      href: "#{tallerMourePath}/taller-moure-colors.jpg"
     ,
-      href: "/assets/img/taller-moure/taller-moure-type.jpg"
+      href: "#{tallerMourePath}/taller-moure-type.jpg"
     ]
 
   $spaceGallery.on "click", (e) ->
     e.preventDefault()
     $.swipebox [
-      href: "/assets/img/space/luna.jpg"
+      href: "#{spacePath}/luna.jpg"
     ]
 
   # -----------------
@@ -92,8 +96,9 @@ $ ->
 
   # Work Links
   $content.on "click", ".work-links a", (e) ->
-    workType = $(@).parents(".work-links").data("workType").titleize()
-    linkType = $(@).data("workLink").titleize()
+    $this = $(@)
+    workType = $this.parents(".work-links").data("workType").titleize()
+    linkType = $this.data("workLink").titleize()
 
     mixpanel.track "Work Link Clicked",
       "Work Type": workType

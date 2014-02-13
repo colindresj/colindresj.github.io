@@ -535,7 +535,7 @@ body {
 @media screen and (max-width: 480px) {
   body {
     text-align: center;
-    font-size: 1.25em;
+    font-size: 1em;
   }
 }
 
@@ -583,6 +583,7 @@ p {
 @media screen and (max-width: 480px) {
   p {
     text-align: justify;
+    font-size: 1em;
   }
 }
 

@@ -71,7 +71,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-exec');
 
-  grunt.registerTask('default', [ 'coffee', 'uglify', 'sass', 'copy', 'cssmin', 'imagemin', 'exec:build' ]);
+  grunt.registerTask('default', [ 'coffee', 'uglify', 'sass', 'copy', 'cssmin', 'exec:build' ]);
   grunt.registerTask('serve', ['exec:serve']);
 
 };
