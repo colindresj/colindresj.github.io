@@ -1,4 +1,5 @@
 module.exports = function(grunt) {
+  'use strict';
 
   grunt.initConfig({
     coffee: {
@@ -14,7 +15,11 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'assets/js/main.min.js': ['bower_components/fastclick/lib/fastclick.js', 'bower_components/swipebox/source/jquery.swipebox.js', 'assets/js/main.js']
+          'assets/js/main.min.js': [
+            'bower_components/fastclick/lib/fastclick.js',
+            'bower_components/swipebox/source/jquery.swipebox.js',
+            'assets/js/main.js'
+          ]
         }
       }
     },
@@ -50,7 +55,10 @@ module.exports = function(grunt) {
       },
       combine: {
         files: {
-          'assets/css/main.min.css': ['assets/css/main.css', 'assets/css/swipebox.css']
+          'assets/css/main.min.css': [
+            'assets/css/main.css',
+            'assets/css/swipebox.css'
+          ]
         }
       }
     },
@@ -73,6 +81,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', [ 'coffee', 'uglify', 'sass', 'copy', 'cssmin', 'exec:build' ]);
   grunt.registerTask('serve', ['exec:serve']);
+    grunt.registerTask('s', ['serve']);
 
 };
 
