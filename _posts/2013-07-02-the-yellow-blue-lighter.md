@@ -12,7 +12,7 @@ After briefly inspecting his swollen nose in the rusty side mirror, Dennis lifts
 
 Dennis, frustrated, searches the car. He opens the glove compartment and the armrest, but finds nothing. He then reaches to the back of the car and moves around a lot of stuff he’s thrown around in the back seat; there’s a dark blue zip-up sweater with a hood, a storage box filled with old books, and an army canteen passed on from his father who served in Vietnam. But, he finds no lighter, nor matches.
 
-A young lady walks by Dennis’s car. She’s wearing a light grey trench coat that nearly covers her up entirely, from mid-calf all the way to – since the collar is flipped up – the sides of her rose-kissed cheeks.
+A young lady walks by Dennis’s car. She’s wearing a light grey trench coat that nearly covers her up entirely, from mid-calf all the way to &emdash; since the collar is flipped up &emdash; the sides of her rose-kissed cheeks.
 
 Dennis hears the young lady walking up close to the car. He rolls down the manual window with his left hand while sticking the other outside, waving it and calling her over.
 
@@ -27,7 +27,8 @@ He takes the lighter from her delicate hand and thanks her as he lights his ciga
 “How did you know I had a lighter with me?”
 
 “Don’t you always,” he answers. “And, lucky for me you happened to have a finely colored blue lighter with you.”
-The young lady squints her eyes at Dennis, and her lips slightly curls at its edges. 
+
+The young lady squints her eyes at Dennis, and her lip slightly curls at its edges. 
 
 Her eyes are usually a piercing shade of blue, but on cold days like this one they turn dark grey, which she once told Dennis she hates because they don’t complement the auburn freckles that God sprinkled on her nose.  
 “Dennis, this is yellow; it’s a yellow lighter,” she says. 
@@ -52,9 +53,9 @@ Dennis exhales another big, dense cloud of smoke. “No it’s not.”
 
 Although it should be the lunch rush, the diner isn’t anywhere close to full. All across the room empty booths dot the floor plan, like little red flags that let everyone who works there know how bad things have gotten in Flagstaff. For most people, eating lunch at the diner is a luxury that the economy doesn’t afford them, so it’s been brown-bag lunches for the past year.
 
-A waitress, dressed in her robin-egg blue uniform and white apron prepares two cups of coffee behind the white Formica counter. A hand-carved Walnut cuckoo clock ticks on the back wall above the kitchen window.
+A waitress, dressed in her robin-egg blue uniform and white apron prepares two cups of coffee behind the white Formica counter. A hand-carved walnut cuckoo clock ticks on the back wall above the kitchen window.
 
-A man and a woman sit at one of the booths. The sunlight that shines past the blinds of the diner window reflects against the red plastic-leather seating. The man is wearing a crisp white button up shirt and a light purple cashmere sweater loosely tied around his shoulders, so that the arms are slightly knotted across his chest. His hands are ornamented with a few rings and a large, platinum watch. His younger sister Maggie is dressed very differently. She has on a simple outfit: dark blue jeans, a grey fleece-lined hooded sweater and a cream turtleneck – no makeup and no jewelry. 
+A man and a woman sit at one of the booths. The sunlight that shines past the blinds of the diner window reflects against the red plastic-leather seating. The man is wearing a crisp white button up shirt and a light purple cashmere sweater loosely tied around his shoulders, so that the arms are slightly knotted across his chest. His hands are ornamented with a few rings and a large, platinum watch. His younger sister Maggie is dressed very differently. She has on a simple outfit: dark blue jeans, a grey fleece-lined hooded sweater and a cream turtleneck &emdash; no makeup and no jewelry. 
 
 The waitress brings them each a cup of coffee and a bowl filled to the brim with white sugar cubes. 
 
@@ -89,15 +90,15 @@ Maggie stares at her brother again. He stares back for a while, but then, abashe
 “Are you going to come inside?”
 
 “I’m seriously considering it,” answers Dennis with a pause. “You’ll be happy to know that I might just come inside.”
-	
+  
 The girl smiles at Dennis and says, “Well, what’s holding you back?”
 
 Dennis takes a puff of his cigarette and exhales; the grim smoke twirls in the air as it rises into the grey misty sky and disappears. He opens his mouth for a moment. He’s just about to speak, but holds back and turns his face away from the young lady.
-	
+  
 “I went to the diner for lunch, and Linda told me you came in the other day,” says the young lady.
 
 Dennis turns back to the girl, “Linda said that?”
-	
+  
 “Uhum,” she answers. “How could you sit at Linda’s booth without me? You know I don’t like her, and you promised me you wouldn’t go in without me if she was there.”
 
 “You know, I was already inside. I was inside when Linda started her shift, and she's the one who came over to me,” Dennis says as he stumbles over his words. “I mean, you weren't there, so Linda came - all of sudden, and she decided to attend to me. What did you want me to do? Did you want me to ask her to leave, from in there?” He looks at the young lady without blinking. 
@@ -132,7 +133,7 @@ She walks around the front of the car, pulls on the passenger side door and wigg
 
 “I mean,” she continues. “You can’t just sit around, you know, and wait for things to happen. You have to do something about it. You shouldn't let things just sit inside of you. You have to do something about what you feel.”
 
-Dennis looks at her coat trapped in the car door and wonders if it looks funny from the outside – a dangling piece of grey cloth flapping in the breeze. 
+Dennis looks at her coat trapped in the car door and wonders if it looks funny from the outside &emdash; a dangling piece of grey cloth flapping in the breeze. 
 
 “Okay,” he says without looking at her.
 
@@ -160,7 +161,7 @@ Maggie looks back at John and takes a sip of coffee. A bell rings in the backgro
 
 “Anyways,” says John. “How’s the new apartment?”
 
-Maggie smiles and nods her head. She doesn’t really care about the apartment right now. She can only think about Dennis, and whether he’s all right waiting outside in the car. This is only the second or third time she’s left his side since he came back home. She loves Dennis very much, but sometimes it gets difficult to keep going. Sometimes she wishes that they didn’t know each other – that they never fell in love. But, those are the kinds of the things she, nor John, nor anyone can control. Her life and Dennis’ are connected, and until one ends, they always will be.
+Maggie smiles and nods her head. She doesn’t really care about the apartment right now. She can only think about Dennis, and whether he’s all right waiting outside in the car. This is only the second or third time she’s left his side since he came back home. She loves Dennis very much, but sometimes it gets difficult to keep going. Sometimes she wishes that they didn’t know each other &emdash; that they never fell in love. But, those are the kinds of the things neither she, nor John, nor anyone can control. Her life and Dennis’ are connected, and until one ends, they always will be.
 
 “Do you like the couch I bought you guys?”
 
