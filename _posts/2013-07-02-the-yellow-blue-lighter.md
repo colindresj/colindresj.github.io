@@ -2,6 +2,7 @@
 layout: story
 title:  "The Yellow/Blue Lighter"
 categories: stories
+edited: 11 March 2014
 ---
 
 The two front windows of the grey Chevy are open. Dennis hangs his hand outside the driver-side window as he holds a lit cigarette and flicks off the ash into the breeze that comes rolling down Santa Fe Avenue from Mars Hill.

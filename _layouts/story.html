@@ -6,10 +6,22 @@ section: writing
   <aside>
     <ul>
       <li>
-        <span>Last Edited: {{ page.date | date_to_long_string }}</span>
+        {% capture words %}
+          {{ page.content | number_of_words | minus: 180 }}
+        {% endcapture %}
+        <span>Last Edited: {{ page.edited }}</span>
       </li>
       <li>
-        <span>Words: {{ page.content | number_of_words }}</span>
+        <span>Words: {{ words | plus: 180 }}</span>
+      </li>
+      <li>
+        <span>
+          {% if words contains "-" %}
+            {{ "1 minute read" }}
+          {% else %}
+            {{ words | divided_by: 180 | append: " minute read" }}
+          {% endif %}
+        </span>
       </li>
       <li><a href="/">Home</a></li>
       <li><a class="scrollTop" href="#">Back to Top</a></li>
@@ -19,8 +31,15 @@ section: writing
     <header>
       <h2>{{ page.title }}</h2>
       {% if page.section == "writing" %}
-        <p class="details"> Last Edited: {{ page.date | date_to_long_string }}</p>
+        <p class="details"> Last Edited: {{ page.edited }}</p>
         <p class="details"> Words: {{ page.content | number_of_words }}</p>
+        <div class="details">
+         {% if words contains "-" %}
+           {{ "1 minute read" }}
+         {% else %}
+           {{ words | divided_by: 180 | append: " minute read" }}
+         {% endif %}
+        </div>
       {% endif %}
     </header>
     {{ content }}
