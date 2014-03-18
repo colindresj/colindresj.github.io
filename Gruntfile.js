@@ -21,6 +21,14 @@ module.exports = function(grunt) {
             'assets/js/main.js'
           ]
         }
+      },
+      jquery: {
+        files: {
+          'assets/js/jquery.min.js': [
+          'bower_components/jquery/dist/jquery.js',
+          'bower_components/jquery-ui/ui/jquery.ui.effect.js'
+          ]
+        }
       }
     },
     sass: {
