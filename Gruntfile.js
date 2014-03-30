@@ -2,6 +2,10 @@ module.exports = function(grunt) {
   'use strict';
 
   grunt.initConfig({
+    clean: {
+      styles: ['assets/css/**/'],
+      scripts: ['assets/js/main.js', 'assets/js/main.min.js', 'assets/js/jquery.min.js']
+    },
     coffee: {
       compile: {
         files: {
@@ -11,7 +15,7 @@ module.exports = function(grunt) {
     },
     uglify: {
       options: {
-        report: 'gzip'
+        report: 'min'
       },
       dist: {
         files: {
@@ -59,7 +63,7 @@ module.exports = function(grunt) {
     },
     cssmin: {
       options: {
-        report: 'gzip'
+        report: 'min'
       },
       combine: {
         files: {
@@ -73,7 +77,7 @@ module.exports = function(grunt) {
         dest: 'assets/css/main-un.css',
         options: {
           stylesheets: ['assets/css/main.css'],
-          report: 'gzip'
+          report: 'min'
         }
       }
     },
@@ -87,6 +91,7 @@ module.exports = function(grunt) {
     }
   });
 
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-sass');
@@ -95,9 +100,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-uncss');
   grunt.loadNpmTasks('grunt-exec');
 
-  grunt.registerTask('default', [ 'coffee', 'uglify', 'sass', 'copy', 'uncss', 'cssmin', 'exec:build' ]);
-  grunt.registerTask('scripts', [ 'coffee', 'uglify' ]);
-  grunt.registerTask('styles', [ 'sass', 'copy', 'uncss', 'cssmin' ]);
+  grunt.registerTask('default', [ 'clean', 'coffee', 'uglify', 'sass', 'copy', 'uncss', 'cssmin', 'exec:build' ]);
+  grunt.registerTask('scripts', [ 'clean:scripts', 'coffee', 'uglify' ]);
+  grunt.registerTask('styles', [ 'clean:styles', 'sass', 'copy', 'uncss', 'cssmin' ]);
   grunt.registerTask('serve', ['exec:serve']);
     grunt.registerTask('s', ['serve']);
 
