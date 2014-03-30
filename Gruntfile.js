@@ -63,10 +63,17 @@ module.exports = function(grunt) {
       },
       combine: {
         files: {
-          'assets/css/main.min.css': [
-            'assets/css/main.css',
-            'assets/css/swipebox.css'
-          ]
+          'assets/css/main.min.css': ['assets/css/main-un.css', 'assets/css/swipebox.css']
+        }
+      }
+    },
+    uncss: {
+      dist: {
+        src: ['index.html', '_layouts/**.html'],
+        dest: 'assets/css/main-un.css',
+        options: {
+          stylesheets: ['assets/css/main.css'],
+          report: 'gzip'
         }
       }
     },
@@ -85,9 +92,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-uncss');
   grunt.loadNpmTasks('grunt-exec');
 
-  grunt.registerTask('default', [ 'coffee', 'uglify', 'sass', 'copy', 'cssmin', 'exec:build' ]);
+  grunt.registerTask('default', [ 'coffee', 'uglify', 'sass', 'copy', 'uncss', 'cssmin', 'exec:build' ]);
+  grunt.registerTask('scripts', [ 'coffee', 'uglify' ]);
+  grunt.registerTask('styles', [ 'sass', 'copy', 'uncss', 'cssmin' ]);
   grunt.registerTask('serve', ['exec:serve']);
     grunt.registerTask('s', ['serve']);
 
