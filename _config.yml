@@ -2,7 +2,7 @@ name: JC
 author:
   name: Jorge Colindres
   email: j@colindres.me
-  github: corporadobob
-  twitter: corporadobob
+  github: colindresj
+  twitter: colindresj
 pygments: true
 permalink: /:categories/:title.html
