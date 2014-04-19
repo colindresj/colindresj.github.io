@@ -6,3 +6,4 @@ author:
   twitter: corporadobob
 pygments: true
 permalink: /:categories/:title.html
+markdown: kramdown
