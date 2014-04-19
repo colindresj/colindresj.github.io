@@ -129,6 +129,12 @@ h1 {
  * Address differences between Firefox and other browsers.
  */
 
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
 /**
  * Address styling not present in IE 8/9.
  */
@@ -336,6 +342,12 @@ p {
 
 a {
   color: black;
+}
+
+hr {
+  border: 2px solid #ffbfcb;
+  margin: 3em auto;
+  width: 20%;
 }
 
 ul {

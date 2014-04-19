@@ -73,7 +73,7 @@ module.exports = function(grunt) {
     },
     uncss: {
       dist: {
-        src: ['index.html', '_layouts/**.html'],
+        src: ['_site/index.html', '_site/stories/*.html'],
         dest: 'assets/css/main-un.css',
         options: {
           stylesheets: ['assets/css/main.css'],

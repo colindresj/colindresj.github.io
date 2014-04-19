@@ -1,19 +1,19 @@
 $ ->
 
-  $scrollTop = $(".scrollTop")
-  $htmlBody = $("html, body")
-  $content = $(".content")
+  $scrollTop    = $(".scrollTop")
+  $htmlBody     = $("html, body")
+  $content      = $(".content")
   $contactLinks = $(".contact-links .links")
 
   # Gallery vars
-  $knowtifyGallery = $("#knowtify-gallery")
-  knowtifyPath = "/assets/img/knowtify"
+  $knowtifyGallery    = $("#knowtify-gallery")
+  knowtifyPath        = "/assets/img/knowtify"
   $tallerMoureGallery = $("#taller-moure-gallery")
-  tallerMourePath = "/assets/img/taller-moure"
-  $orchidGallery = $("#orchid-gallery")
-  orchidPath = "/assets/img/orchid"
-  $spaceGallery = $("#space-gallery")
-  spacePath = "/assets/img/space"
+  tallerMourePath     = "/assets/img/taller-moure"
+  $orchidGallery      = $("#orchid-gallery")
+  orchidPath          = "/assets/img/orchid"
+  $spaceGallery       = $("#space-gallery")
+  spacePath           = "/assets/img/space"
 
   String::titleize = ->
     return ""  unless @?
