@@ -590,7 +590,7 @@ a {
 }
 
 hr {
-  border: 2px solid #dddddd;
+  border: 2px solid #ddd;
   margin: 3em auto;
   width: 20%;
 }
@@ -655,7 +655,7 @@ footer {
   background-color: #3e54fa;
 }
 footer .contact {
-  color: white;
+  color: #fff;
   float: left;
   display: block;
   margin-right: 2.35765%;
@@ -1003,3 +1003,5 @@ footer .contact .links a {
 .post pre.terminal code {
   background-color: #333;
 }
+
+/*# sourceMappingURL=main.css.map */
