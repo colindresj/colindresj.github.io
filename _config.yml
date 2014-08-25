@@ -4,6 +4,6 @@ author:
   email: j@colindres.me
   github: colindresj
   twitter: corporadobob
-pygments: true
+highlighter: 'pygments'
 permalink: /:categories/:title.html
 markdown: kramdown
