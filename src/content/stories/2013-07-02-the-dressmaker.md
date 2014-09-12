@@ -1,7 +1,5 @@
 ---
-layout: story
 title:  "The Dressmaker"
-categories: stories
 edited: 11 March 2014
 ---
 

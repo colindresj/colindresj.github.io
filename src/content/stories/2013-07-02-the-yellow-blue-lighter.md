@@ -1,7 +1,5 @@
 ---
-layout: story
 title:  "The Yellow/Blue Lighter"
-categories: stories
 edited: 11 March 2014
 ---
 

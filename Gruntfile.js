@@ -9,12 +9,23 @@ module.exports = function(grunt) {
         partials: 'src/includes/{,*/}*.hbs',
         layoutdir: 'src/layouts',
         layout: 'default.hbs',
-        data: ['src/data/*.{json,yml}', 'package.json']
+        data: ['src/data/*.{json,yml}', 'package.json'],
+        stories: 'src/content/stories'
       },
       pages: {
         options: { layout: 'page.hbs' },
         src: ['src/pages/*.hbs'],
         dest: './dist/'
+      },
+      stories: {
+        options: {
+          ext: '.html',
+          engine: 'handlebars',
+          layout: 'story.hbs'
+        },
+        files: {
+          './dist/stories/': ['src/content/stories/*.md']
+        }
       }
     },
     clean: {

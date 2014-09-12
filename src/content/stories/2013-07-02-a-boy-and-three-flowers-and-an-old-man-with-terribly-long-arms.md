@@ -1,7 +1,5 @@
 ---
-layout: story
 title:  "A Boy and Three Flowers, and An Old Man With Terribly Long Arms"
-categories: stories
 edited: 11 March 2014
 ---
 
