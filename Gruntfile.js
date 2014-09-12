@@ -6,11 +6,13 @@ module.exports = function(grunt) {
       options: {
         flatten: true,
         assets: 'dist/assets',
+        partials: 'src/includes/{,*/}*.hbs',
         layoutdir: 'src/layouts',
         layout: 'default.hbs',
         data: ['src/data/*.{json,yml}', 'package.json']
       },
       pages: {
+        options: { layout: 'page.hbs' },
         src: ['src/pages/*.hbs'],
         dest: './dist/'
       }
