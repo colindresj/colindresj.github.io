@@ -2,6 +2,19 @@ module.exports = function(grunt) {
   'use strict';
 
   grunt.initConfig({
+    assemble: {
+      options: {
+        flatten: true,
+        assets: 'dist/assets',
+        layoutdir: 'src/layouts',
+        layout: 'default.hbs',
+        data: ['src/data/*.{json,yml}', 'package.json']
+      },
+      pages: {
+        src: ['src/pages/*.hbs'],
+        dest: './dist/'
+      }
+    },
     clean: {
       styles: ['assets/css/**/'],
       scripts: ['assets/js/main.js', 'assets/js/main.min.js', 'assets/js/jquery.min.js']
@@ -91,6 +104,7 @@ module.exports = function(grunt) {
     }
   });
 
+  grunt.loadNpmTasks('assemble');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-uglify');

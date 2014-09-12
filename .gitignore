@@ -1,6 +1,4 @@
-_site/
 .DS_Store
-*.swp
-.sass-cache/
+dist/
 bower_components/
 node_modules/

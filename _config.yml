@@ -1,9 +1,0 @@
-name: JC
-author:
-  name: Jorge Colindres
-  email: j@colindres.me
-  github: colindresj
-  twitter: corporadobob
-highlighter: 'pygments'
-permalink: /:categories/:title.html
-markdown: kramdown
