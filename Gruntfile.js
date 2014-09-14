@@ -1,21 +1,31 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
   'use strict';
 
+  var config = {
+    dist: './dist',
+    src: './src'
+  };
+
+  require('load-grunt-tasks')(grunt, { pattern: ['grunt-*', 'assemble'] });
+  require('time-grunt')(grunt);
+
   grunt.initConfig({
+    config: config,
+
     assemble: {
       options: {
         flatten: true,
-        assets: 'dist/assets',
-        partials: 'src/includes/{,*/}*.hbs',
-        layoutdir: 'src/layouts',
+        assets: '<%= config.dist %>/assets',
+        partials: '<%= config.src %>/includes/{,*/}*.hbs',
+        layoutdir: '<%= config.src %>/layouts',
         layout: 'default.hbs',
-        data: ['src/data/*.{json,yml}', 'package.json'],
-        stories: 'src/content/stories'
+        data: ['<%= config.src %>/data/*.{json,yml}', 'package.json'],
+        stories: '<%= config.src %>/content/stories'
       },
       pages: {
         options: { layout: 'page.hbs' },
-        src: ['src/pages/*.hbs'],
-        dest: './dist/'
+        src: ['<%= config.src %>/pages/*.hbs'],
+        dest: '<%= config.dist %>'
       },
       stories: {
         options: {
@@ -24,114 +34,160 @@ module.exports = function(grunt) {
           layout: 'story.hbs'
         },
         files: {
-          './dist/stories/': ['src/content/stories/*.md']
+          '<%= config.dist %>/stories/': ['<%= config.src %>/content/stories/*.md']
         }
       }
     },
-    clean: {
-      styles: ['assets/css/**/'],
-      scripts: ['assets/js/main.js', 'assets/js/main.min.js', 'assets/js/jquery.min.js']
-    },
-    coffee: {
-      compile: {
-        files: {
-          'assets/js/main.js': 'assets/coffee/main.coffee'
-        }
-      }
-    },
-    uglify: {
+
+    sass: {
       options: {
-        report: 'min'
+        sourceMap: true,
+        includePaths: ['bower_components']
       },
       dist: {
-        files: {
-          'assets/js/main.min.js': [
-            'bower_components/fastclick/lib/fastclick.js',
-            'bower_components/swipebox/source/jquery.swipebox.js',
-            'assets/js/main.js'
-          ]
-        }
-      },
-      jquery: {
-        files: {
-          'assets/js/jquery.min.js': [
-          'bower_components/jquery/dist/jquery.js',
-          'bower_components/jquery-ui/ui/jquery.ui.effect.js'
-          ]
-        }
+        files: [{
+          expand: true,
+          cwd: '<%= config.src %>/assets/scss',
+          src: ['*.scss'],
+          dest: '<%= config.dist %>/assets',
+          ext: '.css'
+        }]
       }
     },
-    sass: {
+
+    autoprefixer: {
+      options: {
+        browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1']
+      },
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '<%= config.dist %>/assets/',
+          src: '{,*/}*.css',
+          dest: '<%= config.dist %>/assets/'
+        }]
+      }
+    },
+
+    coffee: {
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '<%= config.src %>/assets/coffee',
+          src: '{,*/}*.{coffee,litcoffee,coffee.md}',
+          dest: '<%= config.dist %>/assets',
+          ext: '.js'
+        }]
+      }
+    },
+
+    connect: {
       dist: {
         options: {
-          style: 'expanded'
-        },
-        files: {
-          'assets/css/main.css': 'assets/scss/main.scss'
+          port: 9000,
+          open: true,
+          livereload: 35729,
+          hostname: 'localhost',
+          base: '<%= config.dist %>',
+          middleware: function (connect) {
+            return [
+              connect().use(
+                '/bower_components', connect.static('./bower_components')
+              ),
+              connect.static(config.dist)
+            ];
+          }
         }
       }
     },
+
+    wiredep: {
+      scripts: {
+        src: ['<%= config.dist %>/index.html']
+      }
+    },
+
     copy: {
-      swipebox: {
+      dist: {
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: '<%= config.src %>',
+          dest: '<%= config.dist %>',
+          src: [
+            '*.{ico,png,txt}',
+            'assets/fonts/{,*/}*.*'
+          ]
+        }]
+      }
+    },
+
+    watch: {
+      bower: {
+        files: ['bower.json'],
+        tasks: ['wiredep']
+      },
+      coffee: {
+        files: ['<%= config.src %>/assets/coffee/{,*/}*.{coffee,litcoffee,coffee.md}'],
+        tasks: ['coffee:dist']
+      },
+      gruntfile: {
+        files: ['Gruntfile.js']
+      },
+      sass: {
+        files: ['<%= config.src %>/assets/scss/{,*/}*.scss'],
+        tasks: ['sass', 'autoprefixer']
+      },
+      assemble: {
+        files: ['<%= config.src %>/{,*/}*.hbs'],
+        tasks: ['assemble']
+      },
+      livereload: {
+        options: {
+          livereload: '<%= connect.dist.options.livereload %>'
+        },
         files: [
-          {
-            src: 'bower_components/swipebox/source/swipebox.css',
-            dest: 'assets/css/swipebox.css'
-          },
-          {
-            expand: true,
-            cwd: 'bower_components/swipebox/source/img/',
-            src: ['**'],
-            dest: 'assets/css/img/'
-          }
+          '<%= config.dist %>/{,*/}*.html',
+          '<%= config.dist %>/assets/{,*/}*.css',
+          '<%= config.dist %>/assets/{,*/}*.js'
         ]
       }
     },
-    cssmin: {
-      options: {
-        report: 'min'
-      },
-      combine: {
-        files: {
-          'assets/css/main.min.css': ['assets/css/main-un.css', 'assets/css/swipebox.css']
-        }
-      }
-    },
-    uncss: {
+
+    clean: {
       dist: {
-        src: ['_site/index.html', '_site/stories/*.html'],
-        dest: 'assets/css/main-un.css',
-        options: {
-          stylesheets: ['assets/css/main.css'],
-          report: 'min'
-        }
-      }
-    },
-    exec: {
-      build: {
-        cmd: 'jekyll build'
-      },
-      serve: {
-        cmd: 'jekyll serve --watch'
+        files: [{
+          dot: true,
+          src: [
+            '<%= config.dist %>/*',
+            '!<%= config.dist %>/.git*'
+          ]
+        }]
       }
     }
   });
 
-  grunt.loadNpmTasks('assemble');
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-coffee');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-uncss');
-  grunt.loadNpmTasks('grunt-exec');
+  grunt.registerTask('serve', function () {
+    if (grunt.option('allow-remote')) {
+      grunt.config.set('connect.dist.options.hostname', '0.0.0.0');
+    }
 
-  grunt.registerTask('default', [ 'clean', 'coffee', 'uglify', 'sass', 'copy', 'uncss', 'cssmin', 'exec:build' ]);
-  grunt.registerTask('scripts', [ 'clean:scripts', 'coffee', 'uglify' ]);
-  grunt.registerTask('styles', [ 'clean:styles', 'sass', 'copy', 'uncss', 'cssmin' ]);
-  grunt.registerTask('serve', ['exec:serve']);
-    grunt.registerTask('s', ['serve']);
+    grunt.task.run([
+      'build',
+      'connect',
+      'watch'
+    ]);
+  });
 
+  grunt.registerTask('build', [
+    'clean:dist',
+    'assemble',
+    'wiredep',
+    'coffee',
+    'sass',
+    'autoprefixer',
+    'copy:dist'
+  ]);
+
+  grunt.registerTask('default', ['serve']);
 };
-
