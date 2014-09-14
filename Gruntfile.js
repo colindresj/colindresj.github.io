@@ -81,6 +81,17 @@ module.exports = function (grunt) {
       }
     },
 
+    imagemin: {
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '<%= config.src %>/assets/images',
+          src: '{,*/}*.{gif,jpeg,jpg,png}',
+          dest: '<%= config.dist %>/assets/images'
+        }]
+      }
+    },
+
     connect: {
       dist: {
         options: {
@@ -186,6 +197,7 @@ module.exports = function (grunt) {
     'coffee',
     'sass',
     'autoprefixer',
+    'newer:imagemin',
     'copy:dist'
   ]);
 
