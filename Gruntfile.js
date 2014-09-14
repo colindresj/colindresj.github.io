@@ -3,7 +3,8 @@ module.exports = function (grunt) {
 
   var config = {
     dist: './dist',
-    src: './src'
+    src: './src',
+    tmp: './.tmp'
   };
 
   require('load-grunt-tasks')(grunt, { pattern: ['grunt-*', 'assemble'] });
@@ -15,17 +16,16 @@ module.exports = function (grunt) {
     assemble: {
       options: {
         flatten: true,
-        assets: '<%= config.dist %>/assets',
+        assets: '<%= config.tmp %>/assets',
         partials: '<%= config.src %>/includes/{,*/}*.hbs',
         layoutdir: '<%= config.src %>/layouts',
         layout: 'default.hbs',
-        data: ['<%= config.src %>/data/*.{json,yml}', 'package.json'],
-        stories: '<%= config.src %>/content/stories'
+        data: ['<%= config.src %>/data/*.{json,yml}', 'package.json']
       },
       pages: {
         options: { layout: 'page.hbs' },
         src: ['<%= config.src %>/pages/*.hbs'],
-        dest: '<%= config.dist %>'
+        dest: '<%= config.tmp %>/'
       },
       stories: {
         options: {
@@ -34,7 +34,7 @@ module.exports = function (grunt) {
           layout: 'story.hbs'
         },
         files: {
-          '<%= config.dist %>/stories/': ['<%= config.src %>/content/stories/*.md']
+          '<%= config.tmp %>/stories/': ['<%= config.src %>/content/stories/*.md']
         }
       }
     },
@@ -44,12 +44,12 @@ module.exports = function (grunt) {
         sourceMap: true,
         includePaths: ['bower_components']
       },
-      dist: {
+      dev: {
         files: [{
           expand: true,
           cwd: '<%= config.src %>/assets/stylesheets',
           src: ['*.scss'],
-          dest: '<%= config.dist %>/assets',
+          dest: '<%= config.tmp %>/assets',
           ext: '.css'
         }]
       }
@@ -62,20 +62,20 @@ module.exports = function (grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '<%= config.dist %>/assets/',
+          cwd: '<%= config.tmp %>/assets/',
           src: '{,*/}*.css',
-          dest: '<%= config.dist %>/assets/'
+          dest: '<%= config.tmp %>/assets/'
         }]
       }
     },
 
     coffee: {
-      dist: {
+      dev: {
         files: [{
           expand: true,
           cwd: '<%= config.src %>/assets/javascripts',
           src: '{,*/}*.{coffee,litcoffee,coffee.md}',
-          dest: '<%= config.dist %>/assets',
+          dest: '<%= config.tmp %>/assets',
           ext: '.js'
         }]
       }
@@ -92,29 +92,50 @@ module.exports = function (grunt) {
       }
     },
 
+    useminPrepare: {
+      html: '<%= config.tmp %>/index.html',
+      options: {
+        dest: '<%= config.dist %>'
+      }
+    },
+
+    usemin: {
+      options: {
+        assetsDirs: ['<%= config.dist %>/assets']
+      },
+      html: ['<%= config.dist %>/{,*/}*.html'],
+      css: ['<%= config.dist %>/assets/{,*/}*.css']
+    },
+
     connect: {
-      dist: {
+      dev: {
         options: {
           port: 9000,
           open: true,
           livereload: 35729,
           hostname: 'localhost',
-          base: '<%= config.dist %>',
+          base: '<%= config.tmp %>',
           middleware: function (connect) {
             return [
               connect().use(
                 '/bower_components', connect.static('./bower_components')
               ),
-              connect.static(config.dist)
+              connect.static(config.tmp)
             ];
           }
+        }
+      },
+      dist: {
+        options: {
+          base: '<%= config.dist %>',
+          livereload: false
         }
       }
     },
 
     wiredep: {
       scripts: {
-        src: ['<%= config.dist %>/index.html']
+        src: ['<%= config.tmp %>/index.html']
       }
     },
 
@@ -130,6 +151,14 @@ module.exports = function (grunt) {
             'assets/fonts/{,*/}*.*'
           ]
         }]
+      },
+      html: {
+        files: [{
+          expand: true,
+          cwd: '<%= config.tmp %>',
+          dest: '<%= config.dist %>',
+          src: ['{,*/}*.html']
+        }]
       }
     },
 
@@ -140,7 +169,7 @@ module.exports = function (grunt) {
       },
       coffee: {
         files: ['<%= config.src %>/assets/javascripts/{,*/}*.{coffee,litcoffee,coffee.md}'],
-        tasks: ['coffee:dist']
+        tasks: ['coffee']
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -155,22 +184,23 @@ module.exports = function (grunt) {
       },
       livereload: {
         options: {
-          livereload: '<%= connect.dist.options.livereload %>'
+          livereload: '<%= connect.dev.options.livereload %>'
         },
         files: [
-          '<%= config.dist %>/{,*/}*.html',
-          '<%= config.dist %>/assets/{,*/}*.css',
-          '<%= config.dist %>/assets/{,*/}*.js'
+          '<%= config.tmp %>/{,*/}*.html',
+          '<%= config.tmp %>/assets/{,*/}*.css',
+          '<%= config.tmp %>/assets/{,*/}*.js'
         ]
       }
     },
 
     clean: {
+      dev: '<%= config.tmp %>',
       dist: {
         files: [{
           dot: true,
           src: [
-            '<%= config.dist %>/*',
+            '<%= config.dist %>',
             '!<%= config.dist %>/.git*'
           ]
         }]
@@ -178,27 +208,41 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.registerTask('serve', function () {
+  grunt.registerTask('serve', function (target) {
     if (grunt.option('allow-remote')) {
       grunt.config.set('connect.dist.options.hostname', '0.0.0.0');
     }
 
+    if (target === 'dist') {
+      return grunt.task.run(['build', 'connect:dist:keepalive']);
+    }
+
     grunt.task.run([
-      'build',
-      'connect',
+      'clean:dev',
+      'assemble',
+      'wiredep',
+      'coffee',
+      'sass',
+      'autoprefixer',
+      'connect:dev',
       'watch'
     ]);
   });
 
   grunt.registerTask('build', [
-    'clean:dist',
+    'clean',
     'assemble',
     'wiredep',
+    'useminPrepare',
     'coffee',
     'sass',
     'autoprefixer',
+    'concat',
+    'cssmin',
+    'uglify',
     'newer:imagemin',
-    'copy:dist'
+    'copy',
+    'usemin'
   ]);
 
   grunt.registerTask('default', ['serve']);
