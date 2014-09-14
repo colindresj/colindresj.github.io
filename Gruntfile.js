@@ -107,6 +107,32 @@ module.exports = function (grunt) {
       css: ['<%= config.dist %>/assets/{,*/}*.css']
     },
 
+    htmlmin: {
+      dist: {
+        options: {
+          removeComments: true,
+          removeCommentsFromCDATA: true,
+          collapseWhitespace: true,
+          conservativeCollapse: true,
+          collapseBooleanAttributes: true,
+          removeAttributeQuotes: true,
+          removeRedundantAttributes: true,
+          removeEmptyAttributes: true,
+          removeScriptTypeAttributes: true,
+          removeStyleLinkTypeAttributes: true,
+          removeOptionalTags: true,
+          removeIgnored: true,
+          caseSensitive: true
+        },
+        files: [{
+          expand: true,
+          cwd: '<%= config.dist %>',
+          src: '{,*/}*.html',
+          dest: '<%= config.dist %>'
+        }]
+      }
+    },
+
     connect: {
       dev: {
         options: {
@@ -242,7 +268,9 @@ module.exports = function (grunt) {
     'uglify',
     'newer:imagemin',
     'copy',
-    'usemin'
+    'usemin',
+    'htmlmin',
+    'clean:dev'
   ]);
 
   grunt.registerTask('default', ['serve']);
