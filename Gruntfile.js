@@ -47,7 +47,7 @@ module.exports = function (grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '<%= config.src %>/assets/scss',
+          cwd: '<%= config.src %>/assets/stylesheets',
           src: ['*.scss'],
           dest: '<%= config.dist %>/assets',
           ext: '.css'
@@ -73,7 +73,7 @@ module.exports = function (grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '<%= config.src %>/assets/coffee',
+          cwd: '<%= config.src %>/assets/javascripts',
           src: '{,*/}*.{coffee,litcoffee,coffee.md}',
           dest: '<%= config.dist %>/assets',
           ext: '.js'
@@ -128,14 +128,14 @@ module.exports = function (grunt) {
         tasks: ['wiredep']
       },
       coffee: {
-        files: ['<%= config.src %>/assets/coffee/{,*/}*.{coffee,litcoffee,coffee.md}'],
+        files: ['<%= config.src %>/assets/javascripts/{,*/}*.{coffee,litcoffee,coffee.md}'],
         tasks: ['coffee:dist']
       },
       gruntfile: {
         files: ['Gruntfile.js']
       },
       sass: {
-        files: ['<%= config.src %>/assets/scss/{,*/}*.scss'],
+        files: ['<%= config.src %>/assets/stylesheets/{,*/}*.scss'],
         tasks: ['sass', 'autoprefixer']
       },
       assemble: {
