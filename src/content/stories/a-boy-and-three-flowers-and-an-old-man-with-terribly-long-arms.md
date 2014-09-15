@@ -1,6 +1,8 @@
 ---
 title: A Boy and Three Flowers, and An Old Man With Terribly Long Arms
 edited: 11 March 2014
+word-count: 3,520
+read-time: 18
 ---
 
 The rain fell upon the village for three days. It was so much that the sky appeared as a single ash-gray thing, and the black sand on the beach would turn into a stew of rotten shellfish and salty mud. In this village a boy named Arlo lived with his mother in a square house made of yellow stone and with a straw roof; it was built into the side of a grassy hill and surrounded by dark grey, black and green flint pebbles and tufts of clumpy white chalk nodules that protruded out of the grass.

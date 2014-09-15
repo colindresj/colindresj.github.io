@@ -1,46 +1,30 @@
 ---
 layout: default.hbs
 ---
-<section class="story">
-  <aside>
-    <ul>
-      <li>
-{{!--         {% capture words %}
-          {{ page.content | number_of_words | minus: 180 }}
-        {% endcapture %}
-        <span>Last Edited: {{ page.edited }}</span> --}}
-      </li>
-      <li>
-        {{!-- <span>Words: {{ words | plus: 180 }}</span> --}}
-      </li>
-      <li>
-        <span>
-{{!--           {% if words contains "-" %}
-            {{ "1 minute read" }}
-          {% else %}
-            {{ words | divided_by: 180 | append: " minute read" }}
-          {% endif %} --}}
-        </span>
-      </li>
-      <li><a href="/">Home</a></li>
-      <li><a class="scrollTop" href="#">Back to Top</a></li>
-    </ul>
-  </aside>
-  <article>
-    <header>
-      <h2>{{ title }}</h2>
-      <p class="details"> Last Edited: {{ edited }}</p>
-      {{!-- <p class="details"> Words: {{ page.content | number_of_words }}</p> --}}
-      <div class="details">
-{{!--        {% if words contains "-" %}
-         {{ "1 minute read" }}
-       {% else %}
-         {{ words | divided_by: 180 | append: " minute read" }}
-       {% endif %} --}}
-      </div>
-    </header>
-    {{#markdown}}
-      {{> body }}
-    {{/markdown}}
-  </article>
-</section>
+<div class="container">
+  <div class="content">
+     <section class="story">
+      <aside>
+        <ul>
+          <li><span>Last Edited: {{page.edited}}</span></li>
+          <li><span>{{page.word-count}} words</span></li>
+          <li><span>{{page.read-time}} minute read</span></li>
+          <li><a href="/">Home</a></li>
+          <li><a class="scrollTop" href="#">Back to Top</a></li>
+        </ul>
+      </aside>
+      <article>
+        <header>
+          <h2>{{title}}</h2>
+          <p class="details"> Last Edited: {{page.edited}}</p>
+          <p class="details">{{page.word-count}} words</p>
+          <div class="details">{{page.read-time}} minute read</div>
+        </header>
+        {{#markdown}}
+          {{> body }}
+        {{/markdown}}
+      </article>
+    </section>
+  </div>
+</div>
+
