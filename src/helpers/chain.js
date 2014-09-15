@@ -1,4 +1,6 @@
 module.exports.register = function (Handlebars) {
+  'use strict';
+
   var _ = require('lodash');
 
   Handlebars.registerHelper('chain', function () {
