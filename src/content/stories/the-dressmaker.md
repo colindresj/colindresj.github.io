@@ -1,5 +1,5 @@
 ---
-title:  "The Dressmaker"
+title: The Dressmaker
 edited: 11 March 2014
 ---
 

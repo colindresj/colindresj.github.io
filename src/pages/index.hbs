@@ -57,9 +57,11 @@
     </aside>
     <div class="work-links" data-work-type="writing">
       <ul>
-{{!--         {% for post in site.categories.stories %}
-        <li><a href="{{ post.url }}" data-work-link="{{ post.title }}">{{ post.title }}</a></li>
-        {% endfor %} --}}
+        {{#each stories}}
+        <li>
+          <a href="stories/{{slugify this.title}}.html" data-work-link="{{this.title}}">{{this.title}}</a>
+        </li>
+        {{/each}}
       </ul>
     </div>
   </div>

@@ -1,5 +1,5 @@
 ---
-title:  "Today"
+title: Today
 edited: 10 March 2014
 ---
 

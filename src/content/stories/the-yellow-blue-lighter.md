@@ -1,5 +1,5 @@
 ---
-title:  "The Yellow/Blue Lighter"
+title: The Yellow/Blue Lighter
 edited: 11 March 2014
 ---
 

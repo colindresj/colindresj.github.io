@@ -1,5 +1,5 @@
 ---
-title:  "A Boy and Three Flowers, and An Old Man With Terribly Long Arms"
+title: A Boy and Three Flowers, and An Old Man With Terribly Long Arms
 edited: 11 March 2014
 ---
 
