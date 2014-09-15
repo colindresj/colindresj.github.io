@@ -7,8 +7,8 @@ layout: default.hbs
       <aside>
         <ul>
           <li><span>Last Edited: {{page.edited}}</span></li>
-          <li><span>{{page.word-count}} words</span></li>
-          <li><span>{{page.read-time}} minute read</span></li>
+          <li><span>{{page.word_count}} words</span></li>
+          <li><span>{{page.read_time}} minute read</span></li>
           <li><a href="/">Home</a></li>
           <li><a class="scrollTop" href="#">Back to Top</a></li>
         </ul>
@@ -17,8 +17,8 @@ layout: default.hbs
         <header>
           <h2>{{title}}</h2>
           <p class="details"> Last Edited: {{page.edited}}</p>
-          <p class="details">{{page.word-count}} words</p>
-          <div class="details">{{page.read-time}} minute read</div>
+          <p class="details">{{page.word_count}} words</p>
+          <div class="details">{{page.read_time}} minute read</div>
         </header>
         {{#markdown}}
           {{> body }}

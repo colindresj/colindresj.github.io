@@ -1,8 +1,8 @@
 ---
 title: The Yellow/Blue Lighter
 edited: 11 March 2014
-word-count: 3,190
-read-time: 16
+word_count: 3,190
+read_time: 16
 ---
 
 The two front windows of the grey Chevy are open. Dennis hangs his hand outside the driver-side window as he holds a lit cigarette and flicks off the ash into the breeze that comes rolling down Santa Fe Avenue from Mars Hill.

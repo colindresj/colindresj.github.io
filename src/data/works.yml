@@ -16,18 +16,18 @@ works:
       -
         title: Saffron
         hosted: true
-        hostUrl: /saffron
+        host_url: /saffron
       -
         title: generator-ractive
         hosted: false
       -
         title: Ernest
         hosted: true
-        hostUrl: http://write-with-ernest.herokuapp.com
+        host_url: http://write-with-ernest.herokuapp.com
       -
         title: Game Title
         hosted: true
-        hostUrl: http://game-title.herokuapp.com
+        host_url: http://game-title.herokuapp.com
       -
         title: Chimpaxify
         hosted: false
