@@ -1,0 +1,12 @@
+<li>
+{{#if hosted}}
+  <a href="{{hostUrl}}"
+     data-work-link="{{lowercase title}}:hosted">{{title}}</a> is on
+  <a href="https://github.com/colindresj/{{slugify title}}"
+     data-work-link="{{lowercase title}}:code">github</a>
+{{else}}
+  {{title}} is on <a href="https://github.com/colindresj/{{slugify title}}"
+                     data-work-link="{{lowercase title}}:code">github</a>
+{{/if}}
+</li>
+

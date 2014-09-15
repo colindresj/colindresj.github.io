@@ -1,0 +1,39 @@
+works:
+  -
+    writing:
+      - A Boy and Three Flowers, and an Old Man With Terribly Long Arms
+      - The Dressmaker
+      - The Yellow/Blue Lighter
+      - Today
+  -
+    design:
+      - Knowtify
+      - Taller Moure
+      - Orchid
+      - Space
+  -
+    code:
+      -
+        title: Saffron
+        hosted: true
+        hostUrl: /saffron
+      -
+        title: generator-ractive
+        hosted: false
+      -
+        title: Ernest
+        hosted: true
+        hostUrl: http://write-with-ernest.herokuapp.com
+      -
+        title: Game Title
+        hosted: true
+        hostUrl: http://game-title.herokuapp.com
+      -
+        title: Chimpaxify
+        hosted: false
+      -
+        title: Flipbooker
+        hosted: false
+      -
+        title: Trellis
+        hosted: false
