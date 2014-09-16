@@ -7,13 +7,13 @@ $ ->
 
   # Gallery vars
   $knowtifyGallery    = $("#knowtify-gallery")
-  knowtifyPath        = "/assets/img/knowtify"
+  knowtifyPath        = "/assets/images/knowtify"
   $tallerMoureGallery = $("#taller-moure-gallery")
-  tallerMourePath     = "/assets/img/taller-moure"
+  tallerMourePath     = "/assets/images/taller-moure"
   $orchidGallery      = $("#orchid-gallery")
-  orchidPath          = "/assets/img/orchid"
+  orchidPath          = "/assets/images/orchid"
   $spaceGallery       = $("#space-gallery")
-  spacePath           = "/assets/img/space"
+  spacePath           = "/assets/images/space"
 
   String::titleize = ->
     return ""  unless @?

@@ -179,6 +179,17 @@ module.exports = function (grunt) {
           ]
         }]
       },
+      dev: {
+        files: [{
+          expand: true,
+          cwd: '<%= config.src %>/assets',
+          dest: '<%= config.tmp %>/assets',
+          src: [
+            '{,*/}*.*',
+            'images/{,*/}*.{gif,jpeg,jpg,png}'
+          ]
+        }]
+      },
       html: {
         files: [{
           expand: true,
@@ -251,6 +262,7 @@ module.exports = function (grunt) {
       'coffee',
       'sass',
       'autoprefixer',
+      'copy:dev',
       'connect:dev',
       'watch'
     ]);
@@ -268,7 +280,8 @@ module.exports = function (grunt) {
     'cssmin',
     'uglify',
     'newer:imagemin',
-    'copy',
+    'copy:dist',
+    'copy:html',
     'usemin',
     'htmlmin',
     'clean:dev'
