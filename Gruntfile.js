@@ -163,7 +163,9 @@ module.exports = function (grunt) {
 
     wiredep: {
       scripts: {
-        src: ['<%= config.tmp %>/index.html']
+        src: [
+          '<%= config.tmp %>/**/*.html'
+        ]
       }
     },
 
