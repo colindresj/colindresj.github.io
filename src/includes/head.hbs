@@ -7,5 +7,7 @@
   <!-- build:css(.tmp) assets/main.min.css -->
   <link rel="stylesheet" href="{{assets}}/main.css">
   <!-- endbuild -->
-  <script src="{{assets}}/mixpanel.js"></script>
+  {{#if production}}
+    <script src="{{assets}}/analytics.js"></script>
+  {{/if}}
 </head>

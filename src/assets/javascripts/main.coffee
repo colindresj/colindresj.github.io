@@ -90,24 +90,24 @@ $ ->
   # -----------------
 
   # Page Views
-  mixpanel.track "Page Viewed",
-    "Page Name": document.title
-    "URL": window.location.pathname
+  if window.mixpanel
+    mixpanel.track "Page Viewed",
+      "Page Name": document.title
+      "URL": window.location.pathname
 
-  # Work Links
-  $content.on "click", ".work-links a", (e) ->
-    $this = $(@)
-    workType = $this.parents(".work-links").data("workType").titleize()
-    linkType = $this.data("workLink").titleize()
+    # Work Links
+    $content.on "click", ".work-links a", (e) ->
+      $this = $(@)
+      workType = $this.parents(".work-links").data("workType").titleize()
+      linkType = $this.data("workLink").titleize()
 
-    mixpanel.track "Work Link Clicked",
-      "Work Type": workType
-      "Link Type": linkType
+      mixpanel.track "Work Link Clicked",
+        "Work Type": workType
+        "Link Type": linkType
 
-  # Contact Links
-  $contactLinks.on "click", "a", (e) ->
-    linkType = $(@).last().data("contactLink").titleize()
+    # Contact Links
+    $contactLinks.on "click", "a", (e) ->
+      linkType = $(@).last().data("contactLink").titleize()
 
-    mixpanel.track "Contact Link Clicked",
-      "Link Type": linkType
-
+      mixpanel.track "Contact Link Clicked",
+        "Link Type": linkType

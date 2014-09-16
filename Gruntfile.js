@@ -21,7 +21,8 @@ module.exports = function (grunt) {
         partials: '<%= config.src %>/includes/{,*/}*.hbs',
         layoutdir: '<%= config.src %>/layouts',
         layout: 'default.hbs',
-        data: ['<%= config.src %>/data/*.{json,yml}', 'package.json']
+        data: ['<%= config.src %>/data/*.{json,yml}', 'package.json'],
+        production: true
       },
       pages: {
         options: { layout: 'page.hbs' },
@@ -197,6 +198,14 @@ module.exports = function (grunt) {
           dest: '<%= config.dist %>',
           src: ['{,*/}*.html']
         }]
+      },
+      analytics: {
+        files: [{
+          expand: true,
+          cwd: '<%= config.src %>/assets/javascripts/',
+          dest: '<%= config.dist %>/assets',
+          src: ['analytics.js']
+        }]
       }
     },
 
@@ -255,6 +264,8 @@ module.exports = function (grunt) {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
     }
 
+    grunt.config.set('assemble.options.production', false);
+
     grunt.task.run([
       'clean:dev',
       'assemble',
@@ -264,7 +275,8 @@ module.exports = function (grunt) {
       'autoprefixer',
       'copy:dev',
       'connect:dev',
-      'watch'
+      'watch',
+      'clean:dev'
     ]);
   });
 
@@ -282,6 +294,7 @@ module.exports = function (grunt) {
     'newer:imagemin',
     'copy:dist',
     'copy:html',
+    'copy:analytics',
     'usemin',
     'htmlmin',
     'clean:dev'
