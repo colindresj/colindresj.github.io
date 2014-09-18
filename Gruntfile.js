@@ -162,10 +162,15 @@ module.exports = function (grunt) {
     },
 
     wiredep: {
-      scripts: {
-        src: [
-          '<%= config.tmp %>/**/*.html'
-        ]
+      dist: {
+        options: {
+          overrides: {
+            'swipebox': {
+              'main': ['source/jquery.swipebox.js', 'source/swipebox.css']
+            }
+          }
+        },
+        src: ['<%= config.tmp %>**/*.html']
       }
     },
 

@@ -4,10 +4,15 @@
   <title>{{owner.initials}}</title>
   <link rel="shortcut icon" href="/{{assets}}/favicon.ico" />
   <meta name="viewport" content="width=device-width">
+  <!-- build:css /assets/vendor.min.css -->
+  <!-- bower:css -->
+  <!-- endbower -->
+  <!-- endbuild -->
+
   <!-- build:css(.tmp) /assets/main.min.css -->
   <link rel="stylesheet" href="/{{assets}}/main.css">
   <!-- endbuild -->
   {{#if production}}
-    <script src="/{{assets}}/analytics.js"></script>
+  <script src="/{{assets}}/analytics.js"></script>
   {{/if}}
 </head>
