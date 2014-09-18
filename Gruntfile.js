@@ -164,13 +164,14 @@ module.exports = function (grunt) {
     wiredep: {
       dist: {
         options: {
+          exclude: ['bower_components/jquery/dist/jquery.js'],
           overrides: {
             'swipebox': {
               'main': ['src/js/jquery.swipebox.js', 'src/css/swipebox.css']
             }
           }
         },
-        src: ['<%= config.tmp %>**/*.html']
+        src: ['<%= config.tmp %>/**/*.html']
       }
     },
 
@@ -225,8 +226,14 @@ module.exports = function (grunt) {
           src: ['analytics.js']
         }]
       },
-      swipebox: {
+      vendor: {
         files: [{
+          expand: true,
+          cwd: './bower_components/jquery/dist/',
+          dest: '<%= config.dist %>/assets',
+          src: 'jquery.min.js'
+        },
+        {
           expand: true,
           cwd: './bower_components/swipebox/src/img/',
           dest: '<%= config.dist %>/assets/images/vendor',
@@ -321,7 +328,7 @@ module.exports = function (grunt) {
     'copy:dist',
     'copy:html',
     'copy:analytics',
-    'copy:swipebox',
+    'copy:vendor',
     'replace',
     'usemin',
     'htmlmin',
