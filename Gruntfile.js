@@ -166,11 +166,22 @@ module.exports = function (grunt) {
         options: {
           overrides: {
             'swipebox': {
-              'main': ['source/jquery.swipebox.js', 'source/swipebox.css']
+              'main': ['src/js/jquery.swipebox.js', 'src/css/swipebox.css']
             }
           }
         },
         src: ['<%= config.tmp %>**/*.html']
+      }
+    },
+
+    replace: {
+      example: {
+        src: '<%= config.dist %>/assets/vendor.min.css',
+        dest: '<%= config.dist %>/assets/vendor.min.css',
+        replacements: [{
+          from: '../img/',
+          to: 'images/vendor/'
+        }]
       }
     },
 
@@ -212,6 +223,14 @@ module.exports = function (grunt) {
           cwd: '<%= config.src %>/assets/javascripts/',
           dest: '<%= config.dist %>/assets',
           src: ['analytics.js']
+        }]
+      },
+      swipebox: {
+        files: [{
+          expand: true,
+          cwd: './bower_components/swipebox/src/img/',
+          dest: '<%= config.dist %>/assets/images/vendor',
+          src: '*.{gif,jpeg,jpg,png,svg}'
         }]
       }
     },
@@ -302,6 +321,8 @@ module.exports = function (grunt) {
     'copy:dist',
     'copy:html',
     'copy:analytics',
+    'copy:swipebox',
+    'replace',
     'usemin',
     'htmlmin',
     'clean:dev'
