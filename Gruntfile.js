@@ -193,7 +193,7 @@ module.exports = function (grunt) {
           cwd: '<%= config.src %>',
           dest: '<%= config.dist %>',
           src: [
-            '*.{ico,png,txt}',
+            '{,*/}*.{ico,png,txt}',
             'assets/fonts/{,*/}*.*'
           ]
         }]
