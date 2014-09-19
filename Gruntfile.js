@@ -195,7 +195,8 @@ module.exports = function (grunt) {
           dest: '<%= config.dist %>',
           src: [
             '{,*/}*.{ico,png,txt}',
-            'assets/fonts/{,*/}*.*'
+            'assets/fonts/{,*/}*.*',
+            'CNAME'
           ]
         }]
       },
@@ -272,6 +273,14 @@ module.exports = function (grunt) {
           '<%= config.tmp %>/assets/{,*/}*.js'
         ]
       }
+    },
+
+    'gh-pages': {
+      options: {
+        base: '<%= config.dist %>',
+        message: 'Update personal site'
+      },
+      src: '**/*'
     },
 
     clean: {

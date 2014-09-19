@@ -1,8 +1,8 @@
 ---
 title: Today
 edited: 10 March 2014
-word-count: 80
-read-time: 1
+word_count: 80
+read_time: 1
 ---
 
 may the wind  

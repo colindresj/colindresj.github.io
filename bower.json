@@ -1,17 +1,9 @@
 {
-  "name": "personal_page",
-  "version": "0.0.2",
+  "name": "colindres.me",
+  "version": "0.1.0",
+  "description": "personal website",
   "homepage": "https://github.com/colindresj/colindresj.github.io",
-  "authors": [
-    "JC <jorge.e.colindres@gmail.com>"
-  ],
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
+  "author": "JC <jorge.e.colindres@gmail.com>",
   "dependencies": {
     "swipebox": "*",
     "fastclick": "~0.6.11",

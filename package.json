@@ -1,4 +1,9 @@
 {
+  "name": "colindres.me",
+  "version": "0.1.0",
+  "description": "personal website",
+  "homepage": "https://github.com/colindresj/colindresj.github.io",
+  "author": "JC <jorge.e.colindres@gmail.com>",
   "engines": {
     "node": ">= 0.10.0"
   },
@@ -16,6 +21,7 @@
     "grunt-contrib-imagemin": "^0.8.1",
     "grunt-contrib-uglify": "^0.5.1",
     "grunt-contrib-watch": "^0.6.1",
+    "grunt-gh-pages": "^0.9.1",
     "grunt-newer": "^0.7.0",
     "grunt-sass": "^0.14.1",
     "grunt-text-replace": "^0.3.12",
@@ -24,5 +30,6 @@
     "load-grunt-tasks": "^0.6.0",
     "lodash": "^2.4.1",
     "time-grunt": "^1.0.0"
-  }
+  },
+  "private": true
 }
