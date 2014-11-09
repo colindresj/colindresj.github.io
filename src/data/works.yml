@@ -16,7 +16,7 @@ works:
       -
         title: Saffron
         hosted: true
-        host_url: /saffron
+        host_url: http://colindresj.github.io/saffron
       -
         title: generator-ractive
         hosted: false
