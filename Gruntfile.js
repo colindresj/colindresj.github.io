@@ -71,15 +71,26 @@ module.exports = function (grunt) {
       }
     },
 
-    coffee: {
-      dev: {
-        files: [{
-          expand: true,
-          cwd: '<%= config.src %>/assets/javascripts',
-          src: '{,*/}*.{coffee,litcoffee,coffee.md}',
-          dest: '<%= config.tmp %>/assets',
-          ext: '.js'
-        }]
+    // coffee: {
+    //   dev: {
+    //     files: [{
+    //       expand: true,
+    //       cwd: '<%= config.src %>/assets/javascripts',
+    //       src: '{,*/}*.{coffee,litcoffee,coffee.md}',
+    //       dest: '<%= config.tmp %>/assets',
+    //       ext: '.js'
+    //     }]
+    //   }
+    // },
+
+    '6to5': {
+      options: {
+        sourceMap: true
+      },
+      dist: {
+        files: {
+         '<%= config.tmp %>/assets/next.js': '<%= config.src %>/assets/javascripts/{,*/}*.next.js'
+        }
       }
     },
 
@@ -248,9 +259,13 @@ module.exports = function (grunt) {
         files: ['bower.json'],
         tasks: ['wiredep']
       },
-      coffee: {
-        files: ['<%= config.src %>/assets/javascripts/{,*/}*.{coffee,litcoffee,coffee.md}'],
-        tasks: ['coffee']
+      // coffee: {
+      //   files: ['<%= config.src %>/assets/javascripts/{,*/}*.{coffee,litcoffee,coffee.md}'],
+      //   tasks: ['coffee']
+      // },
+      '6to5': {
+        files: ['<%= config.src %>/assets/javascripts/{,*/}*.next.js'],
+        tasks: ['6to5']
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -312,7 +327,8 @@ module.exports = function (grunt) {
       'clean:dev',
       'assemble',
       'wiredep',
-      'coffee',
+      // 'coffee',
+      '6to5',
       'sass',
       'autoprefixer',
       'copy:dev',
@@ -327,7 +343,8 @@ module.exports = function (grunt) {
     'assemble',
     'wiredep',
     'useminPrepare',
-    'coffee',
+    // 'coffee',
+    '6to5',
     'sass',
     'autoprefixer',
     'concat',
