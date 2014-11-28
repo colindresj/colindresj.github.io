@@ -88,9 +88,13 @@ module.exports = function (grunt) {
         sourceMap: true
       },
       dist: {
-        files: {
-         '<%= config.tmp %>/assets/next.js': '<%= config.src %>/assets/javascripts/{,*/}*.next.js'
-        }
+        files: [{
+          expand: true,
+          cwd: '<%= config.src %>/assets/javascripts',
+          src: '{,*/}*.next.js',
+          dest: '<%= config.tmp %>/assets/',
+          ext: '.js'
+        }]
       }
     },
 
