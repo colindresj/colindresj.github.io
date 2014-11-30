@@ -83,18 +83,17 @@ module.exports = function (grunt) {
     //   }
     // },
 
-    '6to5': {
-      options: {
-        sourceMap: true
-      },
+    browserify: {
       dist: {
-        files: [{
-          expand: true,
-          cwd: '<%= config.src %>/assets/javascripts',
-          src: '{,*/}*.next.js',
-          dest: '<%= config.tmp %>/assets/',
-          ext: '.js'
-        }]
+        files: {
+          '<%= config.tmp %>/assets/main.js': '<%= config.src %>/assets/javascripts/{,*/}*.next.js'
+        },
+        options: {
+          transform: ['6to5-browserify'],
+          browserifyOptions: {
+            debug: true
+          }
+        }
       }
     },
 
@@ -267,10 +266,6 @@ module.exports = function (grunt) {
       //   files: ['<%= config.src %>/assets/javascripts/{,*/}*.{coffee,litcoffee,coffee.md}'],
       //   tasks: ['coffee']
       // },
-      '6to5': {
-        files: ['<%= config.src %>/assets/javascripts/{,*/}*.next.js'],
-        tasks: ['6to5']
-      },
       gruntfile: {
         files: ['Gruntfile.js']
       },
@@ -326,13 +321,14 @@ module.exports = function (grunt) {
     }
 
     grunt.config.set('assemble.options.production', false);
+    grunt.config.set('browserify.options.watch', true);
 
     grunt.task.run([
       'clean:dev',
       'assemble',
       'wiredep',
       // 'coffee',
-      '6to5',
+      'browserify',
       'sass',
       'autoprefixer',
       'copy:dev',
@@ -348,7 +344,7 @@ module.exports = function (grunt) {
     'wiredep',
     'useminPrepare',
     // 'coffee',
-    '6to5',
+    'browserify',
     'sass',
     'autoprefixer',
     'concat',
