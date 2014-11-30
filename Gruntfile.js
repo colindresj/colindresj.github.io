@@ -71,28 +71,13 @@ module.exports = function (grunt) {
       }
     },
 
-    // coffee: {
-    //   dev: {
-    //     files: [{
-    //       expand: true,
-    //       cwd: '<%= config.src %>/assets/javascripts',
-    //       src: '{,*/}*.{coffee,litcoffee,coffee.md}',
-    //       dest: '<%= config.tmp %>/assets',
-    //       ext: '.js'
-    //     }]
-    //   }
-    // },
-
     browserify: {
       dist: {
         files: {
           '<%= config.tmp %>/assets/main.js': '<%= config.src %>/assets/javascripts/{,*/}*.next.js'
         },
         options: {
-          transform: ['6to5-browserify'],
-          browserifyOptions: {
-            debug: true
-          }
+          transform: ['6to5-browserify']
         }
       }
     },
@@ -262,10 +247,6 @@ module.exports = function (grunt) {
         files: ['bower.json'],
         tasks: ['wiredep']
       },
-      // coffee: {
-      //   files: ['<%= config.src %>/assets/javascripts/{,*/}*.{coffee,litcoffee,coffee.md}'],
-      //   tasks: ['coffee']
-      // },
       gruntfile: {
         files: ['Gruntfile.js']
       },
@@ -322,12 +303,12 @@ module.exports = function (grunt) {
 
     grunt.config.set('assemble.options.production', false);
     grunt.config.set('browserify.options.watch', true);
+    grunt.config.set('browserify.options.browserifyOptions.debug', true);
 
     grunt.task.run([
       'clean:dev',
       'assemble',
       'wiredep',
-      // 'coffee',
       'browserify',
       'sass',
       'autoprefixer',
@@ -343,7 +324,6 @@ module.exports = function (grunt) {
     'assemble',
     'wiredep',
     'useminPrepare',
-    // 'coffee',
     'browserify',
     'sass',
     'autoprefixer',
