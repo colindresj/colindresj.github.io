@@ -206,6 +206,8 @@ module.exports = function (grunt) {
           dest: '<%= config.tmp %>/assets',
           src: [
             '{,*/}*.*',
+            '!{,*/}*.js',
+            '!{,*/}*.scss',
             'images/{,*/}*.{gif,jpeg,jpg,png}'
           ]
         }]
