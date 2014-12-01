@@ -1,4 +1,5 @@
 import * as $ from "jQuery";
+import 'swipebox';
 
 export default function() {
   let $knowtifyGallery = $('#knowtify-gallery'),

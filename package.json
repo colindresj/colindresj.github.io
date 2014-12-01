@@ -34,8 +34,12 @@
     "lodash": "^2.4.1",
     "time-grunt": "^1.0.0"
   },
+  "browser": {
+    "swipebox": "./bower_components/swipebox/src/js/jquery.swipebox.js"
+  },
   "browserify-shim": {
-    "jQuery": "global:jQuery"
+    "jQuery": "global:jQuery",
+    "swipebox": "jQuery.fn.swipebox"
   },
   "private": true
 }

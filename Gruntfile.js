@@ -163,7 +163,10 @@ module.exports = function (grunt) {
     wiredep: {
       dist: {
         options: {
-          exclude: ['bower_components/jquery/dist/jquery.js'],
+          exclude: [
+            'bower_components/jquery/dist/jquery.js',
+            'bower_components/swipebox/src/js/jquery.swipebox.js'
+          ],
           overrides: {
             'swipebox': {
               'main': ['src/js/jquery.swipebox.js', 'src/css/swipebox.css']
