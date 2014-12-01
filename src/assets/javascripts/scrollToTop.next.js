@@ -7,8 +7,8 @@ export default function() {
   $scrollTop.on('click', function(e) {
     e.preventDefault();
 
-    $htmlBody.animate({
+    $htmlBody.stop().animate({
       scrollTop: 0
-    }, 800, 'easeInOutCubic');
+    }, 800, 'swing');
   });
 }
