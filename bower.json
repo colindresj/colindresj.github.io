@@ -6,7 +6,6 @@
   "author": "JC <jorge.e.colindres@gmail.com>",
   "dependencies": {
     "swipebox": "*",
-    "fastclick": "~0.6.11",
     "jquery-ui": "~1.10.4",
     "jquery": "~2.1.0"
   },
