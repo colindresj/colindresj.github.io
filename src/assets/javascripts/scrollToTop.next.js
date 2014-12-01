@@ -1,10 +1,14 @@
-let $scrollTop = $('.scrollTop'),
-    $htmlBody = $('html, body');
+import * as $ from "jQuery";
 
-$scrollTop.on('click', function(e) {
-  e.preventDefault();
+export default function() {
+  let $scrollTop = $('.scrollTop'),
+      $htmlBody = $('html, body');
 
-  $htmlBody.animate({
-    scrollTop: 0
-  }, 800, 'easeInOutCubic');
-});
+  $scrollTop.on('click', function(e) {
+    e.preventDefault();
+
+    $htmlBody.animate({
+      scrollTop: 0
+    }, 800, 'easeInOutCubic');
+  });
+}
