@@ -77,7 +77,7 @@ module.exports = function (grunt) {
           '<%= config.tmp %>/assets/main.js': '<%= config.src %>/assets/javascripts/{,*/}*.next.js'
         },
         options: {
-          transform: ['6to5-browserify', 'browserify-shim']
+          transform: ['6to5-browserify']
         }
       }
     },

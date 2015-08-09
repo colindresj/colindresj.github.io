@@ -1,28 +1,20 @@
-import * as $ from 'jQuery';
+import titleizeString from './titleize-string.next';
 
 export default function() {
   if (window.mixpanel) {
-    let $content = $('.content'),
-        $contactLinks = $('.contact-links .links');
-
     mixpanel.track('Page Viewed', {
       'Page Name': document.title,
       'URL': window.location.pathname
     });
 
-    $content.on('click', '.work-links a', function(e) {
-      let $this =$(this),
-          workType = $this.parents('.work-links').data('workType'),
-          linkType = $this.data('workLink').titleize();
+    const contactList = document.getElementsByClassName('contact__list')[0];
 
-      mixpanel.track('Work Link Clicked', {
-        'Work Type': workType,
-        'Link Type': linkType
-      });
-    });
+    contactList.addEventListener('click', e => {
+      const link = e.target.tagName === 'A' ? e.target : null;
 
-    $contactLinks.on('click', 'a', function(e) {
-      let linkType = $(this).last().data('contactLink').titleize();
+      if (!link) return null;
+
+      const linkType = titleizeString(link.getAttribute('data-contact-link'));
 
       mixpanel.track('Contact Link Clicked', {
         'Link Type': linkType

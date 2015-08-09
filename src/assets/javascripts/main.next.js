@@ -1,10 +1,7 @@
-import * as $ from 'jQuery';
 import * as attachFastClick from 'fastclick';
-import scrollToTop from './scrollToTop.next';
+import { init as initSmoothScroll } from 'smooth-scroll';
 import mixpanelEvents from './mixpanelEvents.next';
 
-$(function() {
-  scrollToTop();
-  mixpanelEvents();
-  attachFastClick(document.body);
-});
+initSmoothScroll({ updateURL: false });
+mixpanelEvents();
+attachFastClick(document.body);
