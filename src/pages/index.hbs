@@ -1,52 +1,52 @@
-<section class="title">
-  <div class="name">
-    <h1>
-      Jorge is a developer and designer living and working in New York, NY.
+<header class="header">
+  <figure class="header__logo">
+    <span class="logo"></span>
+  </figure>
+
+  <div class="header__self">
+    <h1 class="header__name">
+      Jorge Colindres
     </h1>
+
+    <h2 class="header__desc">
+      Developer / Designer
+    </h2>
+
+    <h3 class="header__desc">
+      Software Engineer, <a href="https://kontor.com/">KONTOR</a>
+    </h3>
   </div>
-</section>
 </header>
-<section class="work">
-  <div class="design">
-    <aside>
-      <h4>Design</h4>
-    </aside>
-    <div class="work-links" data-work-type="design">
-      <ul>
-        {{#each works}}
-          {{#each design}}
-            {{> design-item}}
-          {{/each}}
-        {{/each}}
-      </ul>
-    </div>
-  </div>
-  <div class="projects">
-    <aside>
-      <h4>Projects</h4>
-    </aside>
-    <div class="work-links" data-work-type="code">
-      <ul>
-        {{#each works}}
-          {{#each code}}
-            {{> code-item}}
-          {{/each}}
-        {{/each}}
-      </ul>
-    </div>
-  </div>
-  <div class="writing">
-    <aside>
-      <h4>Writing</h4>
-    </aside>
-    <div class="work-links" data-work-type="writing">
-      <ul>
-        {{#each works}}
-          {{#each writing}}
-            {{> writing-item}}
-          {{/each}}
-        {{/each}}
-      </ul>
-    </div>
-  </div>
-</section>
+
+<main class="main">
+  <section class="contact">
+    <h4 class="section-title">Contact</h4>
+
+    <ul class="contact__list section-list">
+      <li>
+        <a href="mailto:{{owner.email}}"
+           data-contact-link="email">Email</a>
+      </li>
+
+      <li>
+        <a href="http://github.com/{{owner.github.name}}"
+           data-contact-link="github">Github</a>
+      </li>
+
+      <li>
+        <a href="http://twitter.com/{{owner.twitter.handle}}"
+           data-contact-link="twitter">Twitter</a>
+      </li>
+    </ul>
+  </section>
+
+  <section class="writings">
+    <h4 class="section-title">Writing</h4>
+
+    <ul class="writings__list section-list">
+      {{#each works}}
+        {{> writing-item}}
+      {{/each}}
+    </ul>
+    </section>
+  </main>

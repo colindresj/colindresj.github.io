@@ -1,0 +1,85 @@
+body {
+  font: $base-font-weight $base-font-size $base-font-family;
+  color: $primary-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 100;
+}
+
+a {
+  border-bottom: 3px solid $accent-color;
+  color: $accent-color;
+  text-decoration: none;
+
+  &:hover {
+    color: #fff;
+    background-color: $accent-color;
+  }
+}
+
+.container {
+  padding: ($base-spacing-unit / 2) ($base-spacing-unit / 2);
+
+  @media screen and (min-width: $big-break-point) {
+    padding: $base-spacing-unit ($base-spacing-unit * 2);
+  }
+}
+
+.header__self {
+  padding-top: $base-spacing-unit;
+}
+
+.logo {
+  background-color: $accent-color;
+  border-radius: 50%;
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  float: right;
+}
+
+.main {
+  margin-top: $base-spacing-unit;
+}
+
+.contact {
+  margin-bottom: $base-spacing-unit;
+
+  @media screen and (min-width: $big-break-point) {
+    margin-bottom: 0;
+  }
+}
+
+.section-list {
+  list-style-type: none;
+  padding: 0;
+  line-height: 2;
+}
+
+.section-list li {
+  padding-left: 20px;
+
+  &:before {
+    content: "⇝";
+    margin: 0 5px 0 -20px;
+
+    @media screen and (min-width: $big-break-point) {
+      margin: 0 5px;
+    }
+  }
+
+  @media screen and (min-width: $big-break-point) {
+    padding-left: 0;
+  }
+}
+
+.section-title,
+.section-list,
+.section-list li {
+  display: block;
+
+  @media screen and (min-width: $big-break-point) {
+    display: inline;
+  }
+}

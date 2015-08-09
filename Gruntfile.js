@@ -29,14 +29,14 @@ module.exports = function (grunt) {
         src: ['<%= config.src %>/pages/*.hbs'],
         dest: '<%= config.tmp %>/'
       },
-      stories: {
+      writing: {
         options: {
           ext: '.html',
           engine: 'handlebars',
-          layout: 'story.hbs'
+          layout: 'writing.hbs'
         },
         files: {
-          '<%= config.tmp %>/stories/': ['<%= config.src %>/content/stories/*.md']
+          '<%= config.tmp %>/writing/': ['<%= config.src %>/content/writing/*.md']
         }
       }
     },
