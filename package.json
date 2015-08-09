@@ -35,12 +35,11 @@
     "lodash": "^2.4.1",
     "time-grunt": "^1.0.0"
   },
-  "browser": {
-    "swipebox": "./bower_components/swipebox/src/js/jquery.swipebox.js"
+  "dependencies": {
+    "jquery": "^2.1.4"
   },
   "browserify-shim": {
-    "jQuery": "global:jQuery",
-    "swipebox": "jQuery.fn.swipebox"
+    "jQuery": "global:jQuery"
   },
   "private": true
 }

@@ -44,7 +44,7 @@ module.exports = function (grunt) {
     sass: {
       options: {
         sourceMap: true,
-        includePaths: ['bower_components']
+        includePaths: ['node_modules']
       },
       dev: {
         files: [{
@@ -145,7 +145,7 @@ module.exports = function (grunt) {
           middleware: function (connect) {
             return [
               connect().use(
-                '/bower_components', connect.static('./bower_components')
+                '/node_modules', connect.static('./node_modules')
               ),
               connect.static(config.tmp)
             ];
@@ -157,23 +157,6 @@ module.exports = function (grunt) {
           base: '<%= config.dist %>',
           livereload: false
         }
-      }
-    },
-
-    wiredep: {
-      dist: {
-        options: {
-          exclude: [
-            'bower_components/jquery/dist/jquery.js',
-            'bower_components/swipebox/src/js/jquery.swipebox.js'
-          ],
-          overrides: {
-            'swipebox': {
-              'main': ['src/js/jquery.swipebox.js', 'src/css/swipebox.css']
-            }
-          }
-        },
-        src: ['<%= config.tmp %>/**/*.html']
       }
     },
 
@@ -215,6 +198,20 @@ module.exports = function (grunt) {
           ]
         }]
       },
+      vendor: {
+        files: [{
+          expand: true,
+          cwd: './node_modules/jquery/dist/',
+          dest: '<%= config.dist %>/assets',
+          src: 'jquery.min.js'
+        },
+        {
+          expand: true,
+          cwd: './bower_components/swipebox/src/img/',
+          dest: '<%= config.dist %>/assets/images/vendor',
+          src: '*.{gif,jpeg,jpg,png,svg}'
+        }]
+      },
       html: {
         files: [{
           expand: true,
@@ -230,28 +227,10 @@ module.exports = function (grunt) {
           dest: '<%= config.dist %>/assets',
           src: ['analytics.js']
         }]
-      },
-      vendor: {
-        files: [{
-          expand: true,
-          cwd: './bower_components/jquery/dist/',
-          dest: '<%= config.dist %>/assets',
-          src: 'jquery.min.js'
-        },
-        {
-          expand: true,
-          cwd: './bower_components/swipebox/src/img/',
-          dest: '<%= config.dist %>/assets/images/vendor',
-          src: '*.{gif,jpeg,jpg,png,svg}'
-        }]
       }
     },
 
     watch: {
-      bower: {
-        files: ['bower.json'],
-        tasks: ['wiredep']
-      },
       gruntfile: {
         files: ['Gruntfile.js']
       },
@@ -313,7 +292,6 @@ module.exports = function (grunt) {
     grunt.task.run([
       'clean:dev',
       'assemble',
-      'wiredep',
       'browserify',
       'sass',
       'autoprefixer',
@@ -327,7 +305,6 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'clean',
     'assemble',
-    'wiredep',
     'useminPrepare',
     'browserify',
     'sass',
