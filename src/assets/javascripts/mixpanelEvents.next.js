@@ -9,7 +9,7 @@ export default function() {
 
     const contactList = document.getElementsByClassName('contact__list')[0];
 
-    contactList.addEventListener('click', e => {
+    contactList && contactList.addEventListener('click', e => {
       const link = e.target.tagName === 'A' ? e.target : null;
 
       if (!link) return null;

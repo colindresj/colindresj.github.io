@@ -4,6 +4,8 @@ layout: default.hbs
 <div class="container">
   <div class="content">
     <article class="writing">
+      {{> sticky-nav this}}
+
       <header class="writing__header">
         <h2 class="writing__header__title">{{title}}</h2>
 
@@ -27,5 +29,3 @@ layout: default.hbs
     </article>
   </div>
 </div>
-
-<a data-scroll href="#">Back to Top</a>
