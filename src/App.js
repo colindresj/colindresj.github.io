@@ -13,6 +13,7 @@ addPrefetchExcludes(['dynamic'])
 function App() {
   const [theme, setTheme] = React.useState(darkTheme);
   const toggleTheme = () => setTheme(theme === darkTheme ? lightTheme : darkTheme)
+  const favicon = `${theme.favicon}.png`
 
   return (
     <ThemeProvider theme={{ current: theme, switcher: toggleTheme }}>
@@ -21,7 +22,7 @@ function App() {
           <title>JC</title>
           <link crossorigin="anonymous" href="//cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" integrity="sha256-HxaKz5E/eBbvhGMNwhWRPrAR9i/lG1JeT4mD6hCQ7s4=" rel="stylesheet" />
           <link rel="stylesheet" href="//use.typekit.net/peg0hnw.css" />
-          <link href="./favicon.ico" rel="shortcut icon" />
+          <link href={favicon} rel="shortcut icon" />
         </Head>
         <GlobalStyle />
         <div className="container">
