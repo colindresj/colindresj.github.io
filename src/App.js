@@ -1,22 +1,21 @@
 import React from 'react'
 import { Head, Root, Routes, addPrefetchExcludes } from 'react-static'
-import { ThemeProvider } from 'styled-components'
 import { Link, Router } from 'components/Router'
 import GlobalStyle from 'components/GlobalStyle'
 import Loading from 'components/Loading'
 import Dynamic from 'containers/Dynamic'
-import { darkTheme, lightTheme } from './style'
+import ThemeContext, { themes } from './theme'
 
 // Any routes that start with 'dynamic' will be treated as non-static routes
 addPrefetchExcludes(['dynamic'])
 
 function App() {
-  const [theme, setTheme] = React.useState(darkTheme);
-  const toggleTheme = () => setTheme(theme === darkTheme ? lightTheme : darkTheme)
+  const [theme, setTheme] = React.useState(themes.dark);
+  const toggleTheme = () => setTheme(theme === themes.dark ? themes.light : themes.dark)
   const favicon = `${theme.favicon}.png`
 
   return (
-    <ThemeProvider theme={{ current: theme, switcher: toggleTheme }}>
+    <ThemeContext.Provider value={{ theme, switchTheme: toggleTheme }}>
       <Root>
         <Head>
           <title>JC</title>
@@ -34,7 +33,7 @@ function App() {
           </React.Suspense>
         </div>
       </Root>
-    </ThemeProvider>
+    </ThemeContext.Provider>
   )
 }
 

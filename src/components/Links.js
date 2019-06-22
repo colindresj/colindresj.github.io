@@ -1,34 +1,36 @@
+/** @jsx jsx */
 import React from 'react'
-import s from 'styled-components'
+import { jsx } from '@emotion/core'
 
-const Links = s.ul`
-  display: inline;
-  list-style-type: none;
-  padding: 0;
-  line-height: 2;
-`
+const linksCss = {
+  display: 'inline',
+  lineHeight: 2,
+  listStyleType: 'none',
+  padding: 0,
+}
 
-const Link = s.li`
-  display: inline
-  padding-left: 0;
-`
+const linkCss = {
+  display: 'inline',
+  paddingLeft: 0,
+}
 
-const LinkWithArrow = s(Link)`
-  &:before {
-    content: "⇝";
-    margin: 0 9px;
-  }
-`
+const linkWithArrowCss = {
+  ...linkCss,
+  '&:before': {
+    content: '"⇝"',
+    margin: '0 9px',
+  },
+}
 
 export default ({ title, links }) => (
-  <Links>
-    <Link>{title}</Link>
+  <ul css={linksCss}>
+    <li css={linkCss}>{title}</li>
     {links.map(({text, href}) => (
-      <LinkWithArrow key={text}>
+      <li key={text} css={linkWithArrowCss}>
         <a href={href}>
           {text}
         </a>
-      </LinkWithArrow>)
-    )}
-  </Links>
+      </li>
+    ))}
+  </ul>
 )

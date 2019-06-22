@@ -1,18 +1,19 @@
 import React from 'react'
-import { createGlobalStyle } from 'styled-components'
+import { Global, css } from '@emotion/core'
+import ThemeContext from '../theme'
 
-export default createGlobalStyle`
+const globalCss = theme => css`
   * {
     scroll-behavior: smooth;
   }
 
   html {
-    background-color: ${({ theme }) => theme.current.bgColor};
+    background-color: ${theme.bgColor};
     line-height: 1.15;
   }
 
   body {
-    color: ${({ theme }) => theme.current.textColor};
+    color: ${theme.textColor};
     font-family: futura-pt, sans-serif;
     font-feature-settings: "liga", "clig", "dlig", "frac", "ss01";
     font-size: 16px;
@@ -29,14 +30,14 @@ export default createGlobalStyle`
   }
 
   a {
-    border-bottom: 3px solid ${({ theme }) => theme.current.accentColor};
-    color: ${({ theme }) => theme.current.accentColor};
+    border-bottom: 3px solid ${theme.accentColor};
+    color: ${theme.accentColor};
     text-decoration: none;
   }
 
   a:hover {
-    background-color: ${({ theme }) => theme.current.accentColor};
-    color: ${({ theme }) => theme.current.bgColor};
+    background-color: ${theme.accentColor};
+    color: ${theme.bgColor};
   }
 
   img {
@@ -44,13 +45,21 @@ export default createGlobalStyle`
   }
 
   .container {
-    padding: ${({ theme }) => theme.current.padding / 2}px;
+    padding: ${theme.padding / 2}px;
 
-    @media screen and (min-width: ${({ theme }) => theme.current.bPoint}px) {
-      padding-bottom: ${({ theme }) => theme.current.padding}px;
-      padding-left: ${({ theme }) => theme.current.padding * 2}px;
-      padding-right: ${({ theme }) => theme.current.padding * 2}px;
-      padding-top: ${({ theme }) => theme.current.padding}px;
+    @media screen and (min-width: ${theme.bPoint}px) {
+      padding-bottom: ${theme.padding}px;
+      padding-left: ${theme.padding * 2}px;
+      padding-right: ${theme.padding * 2}px;
+      padding-top: ${theme.padding}px;
     }
   }
 `
+
+export default () => (
+  <ThemeContext.Consumer>
+    {({ theme }) => (
+      <Global styles={globalCss(theme)} />
+    )}
+  </ThemeContext.Consumer>
+)

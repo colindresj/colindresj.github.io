@@ -31,8 +31,8 @@ export default {
       },
     ],
     require.resolve('react-static-plugin-reach-router'),
-    require.resolve('react-static-plugin-preact'),
-    require.resolve('react-static-plugin-styled-components'),
+    // require.resolve('react-static-plugin-preact'),
+    require.resolve('react-static-plugin-emotion'),
     require.resolve('react-static-plugin-sitemap'),
   ],
 }
