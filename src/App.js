@@ -15,7 +15,7 @@ const handleReturn = switchTheme => e => e.keyCode === 13 ? switchTheme() : null
 function App() {
   const [theme, setTheme] = React.useState(themes.dark);
   const toggleTheme = () => setTheme(theme === themes.dark ? themes.light : themes.dark)
-  const favicon = `${theme.favicon}.png`
+  const favicon = `/${theme.favicon}.png`
 
   return (
     <ThemeContext.Provider value={{ theme, switchTheme: toggleTheme }}>
