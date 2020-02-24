@@ -1,7 +1,4 @@
 import React from 'react'
-import ThemeContext from '../theme'
-import Header from '../components/Header'
-import Wave from '../components/Wave'
 
 export default () => {
   return (
