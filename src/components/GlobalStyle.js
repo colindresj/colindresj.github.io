@@ -44,6 +44,10 @@ const globalCss = theme => css`
     max-width: 100%;
   }
 
+  p {
+    font-size: 18px;
+  }
+
   .container {
     padding: ${theme.padding / 2}px;
 
@@ -53,6 +57,11 @@ const globalCss = theme => css`
       padding-right: ${theme.padding * 2}px;
       padding-top: ${theme.padding}px;
     }
+  }
+
+  .post h3 {
+    margin-top: ${theme.padding / 1.5}px;
+    text-decoration: underline;
   }
 `
 

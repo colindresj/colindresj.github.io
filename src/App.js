@@ -5,9 +5,12 @@ import GlobalStyle from 'components/GlobalStyle'
 import Loading from 'components/Loading'
 import Dynamic from 'containers/Dynamic'
 import ThemeContext, { themes } from './theme'
+import Wave from 'components/Wave'
 
 // Any routes that start with 'dynamic' will be treated as non-static routes
 addPrefetchExcludes(['dynamic'])
+
+const handleReturn = switchTheme => e => e.keyCode === 13 ? switchTheme() : null;
 
 function App() {
   const [theme, setTheme] = React.useState(themes.dark);
@@ -25,12 +28,25 @@ function App() {
         </Head>
         <GlobalStyle />
         <div className="container">
-          <React.Suspense fallback={<Loading />}>
-            <Router>
-              <Dynamic path="dynamic" />
-              <Routes path="*" />
-            </Router>
-          </React.Suspense>
+          <ThemeContext.Consumer>
+            {({ switchTheme }) => (
+              <>
+                <span style={{ cursor: 'pointer' }}
+                      onClick={switchTheme}
+                      onKeyDown={handleReturn(switchTheme)}
+                      tabIndex={1}>
+                  <Wave />
+                </span>
+
+                <React.Suspense fallback={<Loading />}>
+                  <Router>
+                    <Dynamic path="dynamic" />
+                    <Routes path="*" />
+                  </Router>
+                </React.Suspense>
+              </>
+            )}
+          </ThemeContext.Consumer>
         </div>
       </Root>
     </ThemeContext.Provider>

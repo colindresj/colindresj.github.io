@@ -16,7 +16,11 @@ export default () => {
           <h3>
             <span>MBA Candidate, <a href="https://tuck.dartmouth.edu">Tuck</a></span>
             <span css={spacerCss} />
-            <span>Summer Analyst, <a href="https://ldv.co">LDV Capital</a></span>
+            <span>Analyst, <a href="https://ldv.co">LDV Capital</a></span>
+
+            <div style={{ marginTop: 80, lineHeight: '1.4' }}>
+              Investment Theses: <a href="/software-for-5G">Software for 5G</a>, <a href="/commoditized-intelligence">Commoditized Intelligence</a>, <a href="/data-explained">Data Explained</a>
+            </div>
           </h3>
         </header>
       )}
