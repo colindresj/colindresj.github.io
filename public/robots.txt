@@ -1,1 +1,4 @@
 User-agent: *
+Allow: /
+Sitemap: https://colindres.me/sitemap.xml
+Host: https://colindres.me

@@ -1,9 +1,9 @@
-## Colindres.me
+# Colindres.me
 > Visit at [colindres.me](http://colindres.me/)
 
-### Built With
-[react-static](https://github.com/nozzle/react-static)
+## Built With
+[Gatsby](https://www.gatsbyjs.org/)
 
-### How
-- Develop with yarn
+## How
+- Develop with NPM scripts
 - Deploy via Git push to Netlify
