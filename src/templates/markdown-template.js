@@ -16,7 +16,7 @@ export default function MarkdownTemplate({ data }) {
       <SEO theme={theme} />
       <div>
         <h2>{frontmatter.title}</h2>
-        <div dangerouslySetInnerHTML={{ __html: html }} />
+        <div className="post" dangerouslySetInnerHTML={{ __html: html }} />
       </div>
     </Layout>
   )
