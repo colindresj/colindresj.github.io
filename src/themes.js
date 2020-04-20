@@ -24,3 +24,5 @@ const light = {
 
 export const getTheme = (h = new Date().getHours()) =>
   h > 7 && h < 16 ? light : dark
+
+export const defaultTheme = light

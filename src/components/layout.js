@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import { getTheme } from "../themes"
+import { getTheme, defaultTheme } from "../themes"
 import Waves from "./waves"
 
 const Layout = ({ theme, children }) => {
@@ -100,7 +100,7 @@ Layout.propTypes = {
 }
 
 Layout.defaultProps = {
-  theme: getTheme()
+  theme: defaultTheme,
 }
 
 export default Layout
