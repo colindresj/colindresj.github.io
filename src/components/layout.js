@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 
+import { getTheme } from "../themes"
 import Waves from "./waves"
 
 const Layout = ({ theme, children }) => {
@@ -14,12 +15,10 @@ const Layout = ({ theme, children }) => {
         }
 
         html {
-          background-color: ${theme.bgColor};
           line-height: 1.15;
         }
 
         body {
-          color: ${theme.textColor};
           font-family: futura-pt, sans-serif;
           font-feature-settings: "liga", "clig", "dlig", "frac", "ss01";
           font-size: 16px;
@@ -35,20 +34,8 @@ const Layout = ({ theme, children }) => {
           letter-spacing: 0.75px;
         }
 
-        .post h3 {
-          margin-top: ${theme.padding / 1.5}px;
-          text-decoration: underline;
-        }
-
         a {
-          border-bottom: 3px solid ${theme.accentColor};
-          color: ${theme.accentColor};
           text-decoration: none;
-        }
-
-        a:hover {
-          background-color: ${theme.accentColor};
-          color: ${theme.bgColor};
         }
 
         img {
@@ -59,8 +46,39 @@ const Layout = ({ theme, children }) => {
           font-size: 18px;
         }
 
+        .post h3 {
+          text-decoration: underline;
+        }
+      `}</style>
+      <style jsx global>{`
+        html {
+          background-color: ${theme.bgColor};
+        }
+
+        body {
+          color: ${theme.textColor};
+        }
+
+        a {
+          border-bottom: 3px solid ${theme.accentColor};
+          color: ${theme.accentColor};
+        }
+
+        a:hover {
+          background-color: ${theme.accentColor};
+          color: ${theme.bgColor};
+        }
+
+        svg path {
+          stroke: ${theme.accentColor};
+        }
+
         .container {
           padding: ${theme.padding / 2}px;
+        }
+
+        .post h3 {
+          margin-top: ${theme.padding / 1.5}px;
         }
 
         @media screen and (min-width: ${theme.bPoint}px) {
@@ -77,7 +95,12 @@ const Layout = ({ theme, children }) => {
 }
 
 Layout.propTypes = {
+  theme: PropTypes.object.isRequired,
   children: PropTypes.node.isRequired,
+}
+
+Layout.defaultProps = {
+  theme: getTheme()
 }
 
 export default Layout

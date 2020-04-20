@@ -85,6 +85,7 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string,
+  theme: PropTypes.object.isRequired,
 }
 
 export default SEO

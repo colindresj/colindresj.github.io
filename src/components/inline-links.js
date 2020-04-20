@@ -1,6 +1,7 @@
 import React from "react"
+import PropTypes from "prop-types"
 
-export default ({ title, links }) => (
+const InlineLinks = ({ title, links }) => (
   <ul>
     <li>{title}</li>
     {links.map(({ text, href }) => (
@@ -29,3 +30,10 @@ export default ({ title, links }) => (
     `}</style>
   </ul>
 )
+
+InlineLinks.propTypes = {
+  title: PropTypes.string.isRequired,
+  links: PropTypes.array.isRequired,
+}
+
+export default InlineLinks

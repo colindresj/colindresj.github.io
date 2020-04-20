@@ -1,5 +1,5 @@
-import faviconDark from './images/favicon-dark.png'
-import faviconLight from './images/favicon-light.png'
+import faviconDark from "./images/favicon-dark.png"
+import faviconLight from "./images/favicon-light.png"
 
 const sizes = {
   bPoint: 600,

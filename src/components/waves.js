@@ -1,6 +1,6 @@
 import React from "react"
 
-const Waves = ({ theme }) => (
+const Waves = () => (
   <svg
     role="presentation"
     clipRule="evenodd"
@@ -25,7 +25,6 @@ const Waves = ({ theme }) => (
         width: 50px;
       }
       svg path {
-        stroke: ${theme.accentColor};
         stroke-width: 1200px;
         fill: none;
       }

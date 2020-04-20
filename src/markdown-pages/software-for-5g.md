@@ -42,6 +42,7 @@ time-to-market and increasing network flexibility. As 5G begins to roll-out,
 there will soon be startups that begin to fill the demand for this technology.
 
 ### Network Insights: With the spread of millions of connected devices,
+
 virtualized networks, near-point data centers and edge computing, will come a
 great deal of complexity. Network providers will have to rely on tools to help
 them understand how their network is operating and what can be done to further
