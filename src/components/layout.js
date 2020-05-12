@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import { getTheme, defaultTheme } from "../themes"
+import { defaultTheme } from "../themes"
 import Waves from "./waves"
 
 const Layout = ({ theme, children }) => {

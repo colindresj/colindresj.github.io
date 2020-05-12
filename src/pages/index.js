@@ -45,6 +45,12 @@ const IndexPage = () => {
               Commoditized Intelligence
             </Link>
             , <Link to="/data-explained">Data Explained</Link>
+            <br />
+            <br />
+            Books I'm Currently Reading:{" "}
+            <a href="//www.goodreads.com/book/show/4731749-leadership-presence">Leadership Presence</a>
+            , <a href="//www.goodreads.com/book/show/21.A_Short_History_of_Nearly_Everything">A Short History of Nearly Everything</a>
+            , <a href="//www.goodreads.com/book/show/16129479-the-great-degeneration">The Great Degeneration: How Institutions Decay and Economies Die</a>
           </div>
         </h3>
       </header>
