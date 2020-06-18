@@ -41,11 +41,12 @@ which dramatically brings down CAPEX and OPEX, all the while lowering the
 time-to-market and increasing network flexibility. As 5G begins to roll-out,
 there will soon be startups that begin to fill the demand for this technology.
 
-### Network Insights: With the spread of millions of connected devices,
+### Network Insights:
 
-virtualized networks, near-point data centers and edge computing, will come a
-great deal of complexity. Network providers will have to rely on tools to help
-them understand how their network is operating and what can be done to further
+With the spread of millions of connected devices, virtualized networks,
+near-point data centers and edge computing, will come a great deal of
+complexity. Network providers will have to rely on tools to help them
+understand how their network is operating and what can be done to further
 optimize network delivery. Because software-based networks will become the
 norm, providers will be able to further rely on ML/AI to manage their networks,
 providing advanced insights that can minimize network failures and aid in
@@ -55,3 +56,10 @@ troubleshooting, mitigation, and remediation.
 of network interactions and connectivity. Opportunities exist for software
 companies to help build the underlying services and applications that will
 support 5G, so that it can live up to its game changing potential.
+
+---
+
+I'm currently exploring this topic further via a WIP
+[report](../software-for-5G.pdf). I'll regularly make updates to this report,
+feel free to use at your own convenience, but realize it's still a
+_work-in-progress_.

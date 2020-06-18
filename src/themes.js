@@ -3,7 +3,7 @@ import faviconLight from "./images/favicon-light.png"
 
 const sizes = {
   bPoint: 600,
-  padding: 60,
+  padding: 60
 }
 
 const dark = {
@@ -11,7 +11,7 @@ const dark = {
   bgColor: "#060606",
   textColor: "#eee",
   favicon: faviconDark,
-  ...sizes,
+  ...sizes
 }
 
 const light = {
@@ -19,10 +19,10 @@ const light = {
   bgColor: "#fff",
   textColor: "#000",
   favicon: faviconLight,
-  ...sizes,
+  ...sizes
 }
 
 export const getTheme = (h = new Date().getHours()) =>
-  h > 7 && h < 16 ? light : dark
+  h > 7 && h < 18 ? light : dark
 
 export const defaultTheme = light

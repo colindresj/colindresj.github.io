@@ -11,7 +11,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const mdTemplate = path.resolve("src/templates/markdown-template.js")
   const result = await graphql(`
     {
-      allMarkdownRemark(limit: 1000) {
+      allMarkdownRemark {
         edges {
           node {
             frontmatter {
@@ -34,7 +34,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     createPage({
       path: node.frontmatter.path,
       component: mdTemplate,
-      context: {}, // additional data can be passed via context
+      context: {} // additional data can be passed via context
     })
   })
 }

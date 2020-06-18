@@ -21,7 +21,7 @@ const Layout = ({ theme, children }) => {
         body {
           font-family: futura-pt, sans-serif;
           font-feature-settings: "liga", "clig", "dlig", "frac", "ss01";
-          font-size: 16px;
+          font-size: 18px;
           font-style: normal;
           font-variant-ligatures: common-ligatures;
           font-variant-numeric: diagonal-fractions;
@@ -32,6 +32,14 @@ const Layout = ({ theme, children }) => {
         h3 {
           font-weight: 400;
           letter-spacing: 0.75px;
+        }
+
+        h1 {
+          font-size: 30px;
+        }
+
+        h2 {
+          font-size: 22px;
         }
 
         a {
@@ -96,11 +104,11 @@ const Layout = ({ theme, children }) => {
 
 Layout.propTypes = {
   theme: PropTypes.object.isRequired,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 }
 
 Layout.defaultProps = {
-  theme: defaultTheme,
+  theme: defaultTheme
 }
 
 export default Layout

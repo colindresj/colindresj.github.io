@@ -18,6 +18,16 @@ export default function MarkdownTemplate({ data }) {
         <h2>{frontmatter.title}</h2>
         <div className="post" dangerouslySetInnerHTML={{ __html: html }} />
       </div>
+
+      <style>{`
+        hr {
+          background-color: ${theme.accentColor};
+          border: 0;
+          height: 3px;
+          margin: 40px auto;
+          width: 50px;
+        }
+      `}</style>
     </Layout>
   )
 }

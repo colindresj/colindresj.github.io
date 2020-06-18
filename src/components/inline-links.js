@@ -2,28 +2,28 @@ import React from "react"
 import PropTypes from "prop-types"
 
 const InlineLinks = ({ title, links }) => (
-  <ul>
+  <ul className="inline-links">
     <li>{title}</li>
-    {links.map(({ text, href }) => (
-      <li key={text} className="arrowed">
-        <a href={href}>{text}</a>
+    {links.map(({ title, url }) => (
+      <li key={title} className="arrowed">
+        <a href={url}>{title}</a>
       </li>
     ))}
 
     <style>{`
-      ul {
+      .inline-links {
         display: inline;
         line-height: 2;
         line-style-type: none;
         padding: 0;
       }
 
-      li, li.arrowed:before {
+      .inline-links li, .inline-links li.arrowed:before {
         display: inline;
         padding-left: 0;
       }
 
-      li.arrowed:before {
+      .inline-links li.arrowed:before {
         content: "⇝";
         margin: 0 9px;
       }
@@ -33,7 +33,7 @@ const InlineLinks = ({ title, links }) => (
 
 InlineLinks.propTypes = {
   title: PropTypes.string.isRequired,
-  links: PropTypes.array.isRequired,
+  links: PropTypes.array.isRequired
 }
 
 export default InlineLinks
