@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import { Link } from "gatsby"
 
 import { defaultTheme } from "../themes"
 import Waves from "./waves"
@@ -7,7 +8,9 @@ import Waves from "./waves"
 const Layout = ({ theme, children }) => {
   return (
     <div className="container">
-      <Waves theme={theme} />
+      <Link to="/" className="no-style">
+        <Waves theme={theme} />
+      </Link>
       <main>{children}</main>
       <style jsx global>{`
         * {
@@ -75,6 +78,13 @@ const Layout = ({ theme, children }) => {
         a:hover {
           background-color: ${theme.accentColor};
           color: ${theme.bgColor};
+        }
+
+        a.no-style,
+        a.no-style:hover {
+          background-color: initial !important;
+          border-bottom: 0 !important;
+          color: initial !important;
         }
 
         svg path {

@@ -10,7 +10,7 @@ const InlineLinks = ({ title, links }) => (
       </li>
     ))}
 
-    <style>{`
+    <style jsx>{`
       .inline-links {
         display: inline;
         line-height: 2;
@@ -18,7 +18,8 @@ const InlineLinks = ({ title, links }) => (
         padding: 0;
       }
 
-      .inline-links li, .inline-links li.arrowed:before {
+      .inline-links li,
+      .inline-links li.arrowed:before {
         display: inline;
         padding-left: 0;
       }

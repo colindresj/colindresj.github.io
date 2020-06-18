@@ -19,7 +19,7 @@ export default function MarkdownTemplate({ data }) {
         <div className="post" dangerouslySetInnerHTML={{ __html: html }} />
       </div>
 
-      <style>{`
+      <style jsx>{`
         hr {
           background-color: ${theme.accentColor};
           border: 0;
