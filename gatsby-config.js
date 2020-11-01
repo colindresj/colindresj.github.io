@@ -20,26 +20,15 @@ module.exports = {
     ],
     books: [
       {
-        title: "Leadership Presence",
-        url: "//www.goodreads.com/book/show/4731749-leadership-presence",
-        author: "Belle Linda Halpern, Kathy Lubar"
-      },
-      {
-        title: "A Short History of Nearly Everything",
+        title: "A Little History of Economics",
         url:
-          "//www.goodreads.com/book/show/21.A_Short_History_of_Nearly_Everything",
-        author: "Bill Bryson"
+          "https://www.goodreads.com/book/show/32622193-a-little-history-of-economics",
+        author: "Niall Kishtainy"
       },
       {
-        title:
-          "The Great Degeneration: How Institutions Decay and Economies Die",
-        url: "//www.goodreads.com/book/show/16129479-the-great-degeneration",
-        author: "Niall Ferguson"
-      },
-      {
-        title: "On Tyranny: Twenty Lessons from the Twentieth Century",
-        url: "https://www.goodreads.com/book/show/33917107-on-tyranny",
-        author: "Timothy Snyder"
+        title: "The American History",
+        url: "https://www.goodreads.com/book/show/43822548-the-american-story",
+        author: "David M. Rubenstein"
       }
     ]
   },
