@@ -20,15 +20,14 @@ module.exports = {
     ],
     books: [
       {
-        title: "A Little History of Economics",
-        url:
-          "https://www.goodreads.com/book/show/32622193-a-little-history-of-economics",
-        author: "Niall Kishtainy"
-      },
-      {
         title: "The American History",
         url: "https://www.goodreads.com/book/show/43822548-the-american-story",
         author: "David M. Rubenstein"
+      },
+      {
+        title: "The Bottom Billion",
+        url: "https://www.goodreads.com/book/show/493371.The_Bottom_Billion",
+        author: "Paul Collier"
       }
     ]
   },
